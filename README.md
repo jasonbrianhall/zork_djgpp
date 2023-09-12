@@ -1,3 +1,18 @@
+# Fork (Zork I)
+This is a slight fork of Zork found here --> https://github.com/devshane/zork
+
+This verison will allow you to compile it for MS-DOS/FreeDOS using DJGPP.  The main issue was that MS-DOS doesn't support terminfo or termcap so I had to remove all references to them.
+
+The following is the command I use to compile for MS-DOS/FreeDOS after installing DJGPP and running something similar to . /usr/local/djgpp/setenv
+
+CC=i586-pc-msdosdjgpp-gcc make
+
+From their, you should see zork.exe in the current directory; this version will now work with various DOS versions
+
+
+I'm including a DPMI extender in the code which needs distributed with the .exe if another DPMI isn't included.
+
+
 ```
 Welcome to Dungeon.			This version created 11-MAR-91.
 You are in an open field west of a big white house with a boarded
