@@ -4,7 +4,8 @@
 BINDIR = /usr/games
 
 # Where to install the data file
-DATADIR = /usr/games/lib
+#DATADIR = /usr/games/lib
+DATADIR = ""
 
 # Where to install the man page
 MANDIR = /usr/share/man
@@ -18,7 +19,7 @@ MANDIR = /usr/share/man
 # more option 1: use the termcap routines.  On some systems the LIBS
 # variable may need to be set to -lcurses.  On some it may need to
 # be /usr/lib/termcap.o.  These options are commented out below.
-LIBS = -ltermcap
+#LIBS = -ltermcap
 TERMFLAG =
 # LIBS = -lcurses
 # LIBS = /usr/lib/termcap.o
