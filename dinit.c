@@ -21,10 +21,10 @@ FILE *dbfile;
 
 #ifndef TEXTFILE
 #ifdef __AMOS__
-#define TEXTFILE "lib:dtextc.dat"
+#define TEXTFILE "dtextc.dat"
 #else /* ! __AMOS__ */
 #ifdef unix
-#define TEXTFILE "/usr/games/lib/dunlib/dtextc.dat"
+#define TEXTFILE "dtextc.dat"
 #else /* ! unix */
  I need a definition for TEXTFILE
 #endif /* ! unix */
@@ -335,12 +335,13 @@ L10000:
 /* NOW RESTORE FROM EXISTING INDEX FILE. */
 
 #ifdef __AMOS__
-    if ((dbfile = fdopen(ropen(LOCALTEXTFILE, 0), BINREAD)) == NULL &&
-	(dbfile = fdopen(ropen(TEXTFILE, 0), BINREAD)) == NULL)
+    if ((dbfile = fdopen(ropen(LOCALTEXTFILE, 0), BINREAD)) == NULL)
 #else
-    if ((dbfile = fopen(LOCALTEXTFILE, BINREAD)) == NULL &&
-	(dbfile = fopen(TEXTFILE, BINREAD)) == NULL)
+    dbfile = fopen(LOCALTEXTFILE, "rb");
+    if (dbfile == NULL)
+    //if ((dbfile = fopen(LOCALTEXTFILE, "rb")) == NULL)
 #endif
+
 	goto L1950;
 
     indxfile = dbfile;
@@ -441,14 +442,14 @@ L10000:
 
 L1925:
     more_output(NULL);
-    printf("%s is version %1d.%1d%c.\n", TEXTFILE, i, j, k);
+    printf("%s is version %1d.%1d%c.\n", LOCALTEXTFILE, i, j, k);
     more_output(NULL);
     printf("I require version %1d.%1d%c.\n", vers_1.vmaj, vers_1.vmin,
 	   vers_1.vedit);
     goto L1975;
 L1950:
     more_output(NULL);
-    printf("I can't open %s.\n", TEXTFILE);
+    printf("I can't open %s.\n", LOCALTEXTFILE);
 L1975:
     more_output("Suddenly a sinister, wraithlike figure appears before you,");
     more_output("seeming to float in the air.  In a low, sorrowful voice he says,");
