@@ -39,7 +39,7 @@ OBJS =	actors.o ballop.o clockr.o demons.o dgame.o dinit.o dmain.o\
 CSDPMI_URL = http://na.mirror.garr.it/mirrors/djgpp/current/v2misc/csdpmi7b.zip
 
 # Main target
-all: $(DOS_TARGET)
+all: $(DOS_TARGET) get-csdpmi
 
 # Build the DOS executable with case handling
 $(DOS_TARGET): $(OBJS) dtextc.dat
