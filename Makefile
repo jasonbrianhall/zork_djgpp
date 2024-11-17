@@ -8,13 +8,9 @@ DOCKER_RUN = docker run --rm -v $(PWD):/src:z -w /src
 USER_ID = $(shell id -u)
 GROUP_ID = $(shell id -g)
 
-# Installation paths
-BINDIR = /usr/games
-DATADIR = ""
-MANDIR = /usr/share/man
-
-# Output names
+# Output names - using uppercase for DOS convention
 DOS_TARGET = DUNGEON.EXE
+TEMP_TARGET = temp_dungeon.exe  # Temporary target for case-sensitivity handling
 
 # Compiler settings (inside Docker DJGPP environment)
 CC = $(DOCKER_RUN) -u $(USER_ID):$(GROUP_ID) $(DJGPP_IMAGE) gcc
@@ -45,9 +41,11 @@ CSDPMI_URL = http://na.mirror.garr.it/mirrors/djgpp/current/v2misc/csdpmi7b.zip
 # Main target
 all: $(DOS_TARGET)
 
-# Build the DOS executable
+# Build the DOS executable with case handling
 $(DOS_TARGET): $(OBJS) dtextc.dat
-	$(CC) $(CFLAGS) -o $(DOS_TARGET) $(OBJS) $(LIBS)
+	$(CC) $(CFLAGS) -o $(TEMP_TARGET) $(OBJS) $(LIBS)
+	rm -f $(DOS_TARGET)
+	mv $(TEMP_TARGET) $(DOS_TARGET)
 
 # Data file creation
 dtextc.dat:
@@ -76,7 +74,7 @@ supp.o: supp.c funcs.h vars.h
 
 # Clean target
 clean:
-	rm -f $(OBJS) $(DOS_TARGET) core dsave.dat *~ *.o
+	rm -f $(OBJS) $(DOS_TARGET) $(TEMP_TARGET) core dsave.dat *~ *.o *.EXE *.exe
 	rm -rf csdpmi
 
 # Docker and DJGPP setup targets
