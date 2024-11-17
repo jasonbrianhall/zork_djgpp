@@ -90,7 +90,7 @@ get-csdpmi:
 msdos: pull-djgpp get-csdpmi $(DOS_TARGET)
 
 # Run with DOSBox target
-run: msdos
+run: msdos get-csdpmi
 	dosbox $(DOS_TARGET)
 
 # Help target
