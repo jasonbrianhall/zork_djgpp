@@ -26,7 +26,7 @@ FILE *dbfile;
 #ifdef unix
 #define TEXTFILE "dtextc.dat"
 #else /* ! unix */
- I need a definition for TEXTFILE
+// I need a definition for TEXTFILE
 #endif /* ! unix */
 #endif /* ! __AMOS__ */
 #endif /* ! TEXTFILE */
