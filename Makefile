@@ -93,9 +93,9 @@ msdos: pull-djgpp get-csdpmi $(DOS_TARGET)
 unix:
 	gcc *.c -o zork
 
-all: unix pull-djgpp msdos pull-mingw windows
+all: pull-djgpp pull-mingw dtextc.dat msdos unix windows
 
-windows: pull-mingw
+windows: pull-mingw dtextc.dat
 	$(DOCKER_RUN) -u $(USER_ID):$(GROUP_ID) $(MINGW_IMAGE) /bin/sh -c "cd /src && $(MINGW_CC) $(CSRC) -o $(WINDOWS_TARGET)"
 
 pull-mingw:
@@ -127,4 +127,4 @@ help:
 	@echo "  make             # Make all"
 	@echo "  make clean       # Clean up"
 
-.PHONY: all msdos clean pull-djgpp get-csdpmi run help
+.PHONY: all msdos unix windows clean pull-djgpp get-csdpmi run help
