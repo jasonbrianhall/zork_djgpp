@@ -27,15 +27,16 @@ jobs:
       run: |
         gcc *.c -o zork
         mkdir -p zork-linux
-        cp zork zork-linux/
-        tar -czf zork-linux.tar.gz zork-linux
+        cp zork dtextc.dat zork-linux/
+        tar -czf zork-linux.tar.gz zork-linux/
 
     - name: Build Windows version
       run: |
         x86_64-w64-mingw32-gcc *.c -o zork_windows.exe
-        echo "Checking if executable was created:"
-        ls -l zork_windows.exe
-        ls -l *.exe
+        mkdir -p win_package
+        cp zork_windows.exe dtextc.dat win_package/
+        cd win_package
+        zip -r ../zork-windows.zip .
 
     - name: Build MS-DOS version
       run: |
@@ -43,11 +44,10 @@ jobs:
         tar -xf djgpp-linux64-gcc1210.tar.bz2 -C /usr/local/
         export PATH=$PATH:/usr/local/djgpp/bin
         /usr/local/djgpp/bin/i586-pc-msdosdjgpp-gcc *.c -o ZORK.EXE
-        cat dtextc.uu1 dtextc.uu2 dtextc.uu3 dtextc.uu4 | uudecode
         wget http://na.mirror.garr.it/mirrors/djgpp/current/v2misc/csdpmi7b.zip
         unzip -u csdpmi7b.zip
         mkdir -p dos_package
-        cp ZORK.EXE dos_package/
+        cp ZORK.EXE dtextc.dat dos_package/
         cp bin/CWSDPMI.EXE dos_package/
         cd dos_package
         zip -r ../zork-dos.zip .
