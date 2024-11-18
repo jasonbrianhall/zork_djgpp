@@ -2,6 +2,7 @@
 
 # Docker image configuration
 DJGPP_IMAGE = djfdyuruiry/djgpp
+MINGW_IMAGE = mdashnet/mingw
 DOCKER_RUN = docker run --rm -v $(PWD):/src:z -w /src
 
 # Get current user and group IDs for Docker
@@ -9,8 +10,9 @@ USER_ID = $(shell id -u)
 GROUP_ID = $(shell id -g)
 
 # Output names - using uppercase for DOS convention
-DOS_TARGET = DUNGEON.EXE
-TEMP_TARGET = temp_dungeon.exe  # Temporary target for case-sensitivity handling
+DOS_TARGET = ZORK.EXE
+WINDOWS_TARGET = zork_windows.exe
+TEMP_TARGET = temp_zork.exe  # Temporary target for case-sensitivity handling
 
 # Compiler settings (inside Docker DJGPP environment)
 CC = $(DOCKER_RUN) -u $(USER_ID):$(GROUP_ID) $(DJGPP_IMAGE) gcc
@@ -93,6 +95,12 @@ unix:
 	gcc *.c -o zork
 
 all: unix msdos pull-djgpp
+
+windows: pull-mingw
+	$(DOCKER_RUN) -u $(USER_ID):$(GROUP_ID) $(MINGW_IMAGE) /bin/sh -c "cd /src && $(MINGW_CC) $(CSRC) -o $(WINDOWS_TARGET)"
+
+pull-mingw:
+	docker pull $(MINGW_IMAGE)
 
 # Run with DOSBox target
 run: msdos
