@@ -145,6 +145,15 @@ to change the format of the database file.  Andre Srinivasan
 (andre@cs.pitt.edu) help test it.  Jonathan Mark
 (uunet!microsoft!jonm) made it work under MS-DOS and Microsoft C.
 ```
+
+## 🚀 Future Plans
+
+The next grand quest awaits: wrapping this classic in a modern Qt GUI! However, the path is treacherous - the current codebase is quite tangled and won't compile with modern C++ compilers. Significant code cleanup would be needed while preserving the original gameplay mechanics. This would involve:
+- Modernizing the code structure without breaking functionality
+- Making it compile with G++ and modern C++ standards
+- Preparing the codebase for Qt integration
+- Maintaining the authentic Zork experience
+
 <!-- HTML Meta Tags for SEO -->
 <meta name="description" content="Embark on the ultimate text adventure with this enhanced cross-platform Zork implementation">
 <meta name="keywords" content="zork, dungeon, text adventure, dos games, djgpp, retro gaming, cross-platform, interactive fiction, infocom, classic games, adventure games">
