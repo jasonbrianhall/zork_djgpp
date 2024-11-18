@@ -5,7 +5,7 @@ on:
     branches:
       - main
   schedule:
-    - cron: '0 0 1 */1 *'  # Monthly builds
+    - cron: '0 0 1 */1 *'
 
 jobs:
   build-and-release:
@@ -19,12 +19,9 @@ jobs:
     steps:
     - uses: actions/checkout@v4
     
-    - name: Set up Docker
-      uses: docker/setup-buildx-action@v3
-    
     - name: Install dependencies
       run: |
-        sudo dnf install -y gcc make wget unzip docker
+        sudo dnf install -y gcc make wget unzip rpm-build mingw64-gcc
 
     - name: Build Linux version
       run: |
@@ -35,24 +32,25 @@ jobs:
 
     - name: Build Windows version
       run: |
-        docker pull mdashnet/mingw
-        docker run --rm -v $(pwd):/src:z -u $(id -u):$(id -g) mdashnet/mingw /bin/sh -c "cd /src && x86_64-w64-mingw32-gcc *.c -o zork_windows.exe"
+        x86_64-w64-mingw32-gcc *.c -o zork_windows.exe
+        echo "Checking if executable was created:"
+        ls -l zork_windows.exe
+        ls -l *.exe
 
     - name: Build MS-DOS version
       run: |
-        docker pull djfdyuruiry/djgpp
-        docker run --rm -v $(pwd):/src:z -u $(id -u):$(id -g) djfdyuruiry/djgpp /bin/sh -c "\
-          cd /src && \
-          gcc *.c -o ZORK.EXE && \
-          cat dtextc.uu1 dtextc.uu2 dtextc.uu3 dtextc.uu4 | uudecode"
+        wget https://github.com/andrewwutw/build-djgpp/releases/download/v3.3/djgpp-linux64-gcc1210.tar.bz2
+        tar -xf djgpp-linux64-gcc1210.tar.bz2 -C /usr/local/
+        export PATH=$PATH:/usr/local/djgpp/bin
+        /usr/local/djgpp/bin/i586-pc-msdosdjgpp-gcc *.c -o ZORK.EXE
+        cat dtextc.uu1 dtextc.uu2 dtextc.uu3 dtextc.uu4 | uudecode
         wget http://na.mirror.garr.it/mirrors/djgpp/current/v2misc/csdpmi7b.zip
-        unzip -o csdpmi7b.zip
+        unzip -u csdpmi7b.zip
         mkdir -p dos_package
         cp ZORK.EXE dos_package/
-        cp csdpmi/bin/CWSDPMI.EXE dos_package/
+        cp bin/CWSDPMI.EXE dos_package/
         cd dos_package
         zip -r ../zork-dos.zip .
-        cd ..
 
     - name: Generate release date
       id: date
