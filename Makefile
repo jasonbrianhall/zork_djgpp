@@ -42,6 +42,8 @@ OBJS =	actors.o ballop.o clockr.o demons.o dgame.o dinit.o dmain.o\
 # CSDPMI settings
 CSDPMI_URL = http://na.mirror.garr.it/mirrors/djgpp/current/v2misc/csdpmi7b.zip
 
+all: build-all
+
 # Build the DOS executable with case handling
 $(DOS_TARGET): $(OBJS) dtextc.dat
 	$(CC) $(CFLAGS) -o $(TEMP_TARGET) $(OBJS) $(LIBS)
@@ -93,10 +95,13 @@ msdos: pull-djgpp get-csdpmi $(DOS_TARGET)
 unix:
 	gcc *.c -o zork
 
-all: pull-djgpp pull-mingw dtextc.dat msdos unix windows
+build-all: pull-djgpp pull-mingw dtextc.dat msdos unix windows
+	@echo "All builds completed"
 
 windows: pull-mingw dtextc.dat
+	@echo "Starting Windows build..."
 	$(DOCKER_RUN) -u $(USER_ID):$(GROUP_ID) $(MINGW_IMAGE) /bin/sh -c "cd /src && $(MINGW_CC) $(CSRC) -o $(WINDOWS_TARGET)"
+	@echo "Windows Build Complete"
 
 pull-mingw:
 	docker pull $(MINGW_IMAGE)
