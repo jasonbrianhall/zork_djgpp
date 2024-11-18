@@ -1,17 +1,20 @@
-# Fork (Zork I)
-This is a slight fork of Zork found here --> https://github.com/devshane/zork
+# Fork (Zork I) - Adventure Awaits! 🗺️
 
-This verison will allow you to compile it for MS-DOS/FreeDOS using DJGPP.  The main issue was that MS-DOS doesn't support terminfo or termcap so I had to remove all references to them.
+Journey into the world of Zork like never before! This enhanced fork of the legendary text adventure (originally from https://github.com/devshane/zork) brings the classic dungeon-crawling experience to modern systems while preserving its timeless charm.
 
-The following is the command I use to compile for MS-DOS/FreeDOS after installing DJGPP and running something similar to . /usr/local/djgpp/setenv
+Ready to explore the Great Underground Empire? This version lets you venture forth on:
+- 💾 MS-DOS/FreeDOS (via DJGPP)
+- 🪟 Windows (via MinGW)
+- 🐧 Unix/Linux systems
 
-CC=i586-pc-msdosdjgpp-gcc make
+Grab pre-compiled adventures instantly at: https://github.com/jasonbrianhall/zork_djgpp/releases
 
-From their, you should see zork.exe in the current directory; this version will now work with various DOS versions
-
-
-I'm including a DPMI extender in the code which needs distributed with the .exe if another DPMI isn't included.
-
+Forge your own path with Docker:
+```bash
+make all           # Unleash all versions
+make msdos         # Summon DOS version
+make windows       # Conjure Windows version
+make unix          # Manifest Unix version
 
 ```
 Welcome to Dungeon.			This version created 11-MAR-91.
@@ -141,4 +144,13 @@ to remove the FORTRAN I/O library, to add simple more processing, and
 to change the format of the database file.  Andre Srinivasan
 (andre@cs.pitt.edu) help test it.  Jonathan Mark
 (uunet!microsoft!jonm) made it work under MS-DOS and Microsoft C.
+
+<!-- HTML Meta Tags for SEO -->
+<meta name="description" content="Embark on the ultimate text adventure with this enhanced cross-platform Zork implementation">
+<meta name="keywords" content="zork, dungeon, text adventure, dos games, djgpp, retro gaming, cross-platform, interactive fiction, infocom, classic games, adventure games">
+<meta name="author" content="Jason Hall">
+<meta name="robots" content="index, follow">
+<meta property="og:title" content="Zork DJGPP Fork - Classic Adventure Reborn">
+<meta property="og:description" content="Experience the legendary text adventure across DOS, Windows, and Unix with this enhanced port">
+<meta property="og:type" content="software">
 
