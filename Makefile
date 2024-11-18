@@ -27,19 +27,19 @@ GDTFLAG = -DALLOW_GDT
 CSRC =	actors.c ballop.c clockr.c demons.c dgame.c dinit.c dmain.c\
 	dso1.c dso2.c dso3.c dso4.c dso5.c dso6.c dso7.c dsub.c dverb1.c\
 	dverb2.c gdt.c lightp.c local.c nobjs.c np.c np1.c np2.c np3.c\
-	nrooms.c objcts.c rooms.c sobjs.c supp.c sverbs.c verbs.c villns.c
+	nrooms.c objcts.c rooms.c sobjs.c supp.c sverbs.c verbs.c villns.c zorkio.c
 
 # Object files
 OBJS =	actors.o ballop.o clockr.o demons.o dgame.o dinit.o dmain.o\
 	dso1.o dso2.o dso3.o dso4.o dso5.o dso6.o dso7.o dsub.o dverb1.o\
 	dverb2.o gdt.o lightp.o local.o nobjs.o np.o np1.o np2.o np3.o\
-	nrooms.o objcts.o rooms.o sobjs.o supp.o sverbs.o verbs.o villns.o
+	nrooms.o objcts.o rooms.o sobjs.o supp.o sverbs.o verbs.o villns.o zorkio.o
 
 # CSDPMI settings
 CSDPMI_URL = http://na.mirror.garr.it/mirrors/djgpp/current/v2misc/csdpmi7b.zip
 
 # Main target
-all: $(DOS_TARGET) get-csdpmi
+all: $(DOS_TARGET)
 
 # Build the DOS executable with case handling
 $(DOS_TARGET): $(OBJS) dtextc.dat
@@ -53,23 +53,23 @@ dtextc.dat:
 		cat dtextc.uu1 dtextc.uu2 dtextc.uu3 dtextc.uu4 | uudecode"
 
 # Special compilation rules
-dinit.o: dinit.c funcs.h vars.h
+dinit.o: dinit.c funcs.h vars.h zorkio.h
 	$(CC) $(CFLAGS) $(GDTFLAG) -DTEXTFILE=\"dtextc.dat\" -c dinit.c
 
-dgame.o: dgame.c funcs.h vars.h
+dgame.o: dgame.c funcs.h vars.h zorkio.h
 	$(CC) $(CFLAGS) $(GDTFLAG) -c dgame.c
 
-gdt.o: gdt.c funcs.h vars.h
+gdt.o: gdt.c funcs.h vars.h zorkio.h
 	$(CC) $(CFLAGS) $(GDTFLAG) -c gdt.c
 
-local.o: local.c funcs.h vars.h
+local.o: local.c funcs.h vars.h zorkio.h
 	$(CC) $(CFLAGS) $(GDTFLAG) -c local.c
 
-supp.o: supp.c funcs.h vars.h
+supp.o: supp.c funcs.h vars.h zorkio.h
 	$(CC) $(CFLAGS) $(TERMFLAG) -c supp.c
 
 # Default compilation rule for other object files
-%.o: %.c funcs.h vars.h
+%.o: %.c funcs.h vars.h zorkio.h
 	$(CC) $(CFLAGS) -c $<
 
 # Clean target
@@ -89,8 +89,13 @@ get-csdpmi:
 # Complete build target including CSDPMI
 msdos: pull-djgpp get-csdpmi $(DOS_TARGET)
 
+unix:
+	gcc *.c -o zork
+
+all: unix msdos pull-djgpp
+
 # Run with DOSBox target
-run: msdos get-csdpmi
+run: msdos
 	dosbox $(DOS_TARGET)
 
 # Help target
@@ -108,6 +113,7 @@ help:
 	@echo "  make pull-djgpp  # First time setup"
 	@echo "  make msdos       # Build complete DOS version"
 	@echo "  make run         # Build and run in DOSBox"
+	@echo "  make unix        # Build on UNIX or Linux"
 	@echo "  make clean       # Clean up"
 
 .PHONY: all msdos clean pull-djgpp get-csdpmi run help
