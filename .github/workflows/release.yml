@@ -24,7 +24,7 @@ jobs:
     
     - name: Install dependencies
       run: |
-        sudo dnf install -y gcc make wget unzip
+        sudo dnf install -y gcc make wget unzip docker
 
     - name: Build Linux version
       run: |
