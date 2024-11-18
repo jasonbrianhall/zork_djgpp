@@ -108,6 +108,7 @@ help:
 	@echo "  clean       - Remove built files"
 	@echo "  pull-djgpp  - Pull the DJGPP Docker image"
 	@echo "  get-csdpmi  - Download CSDPMI runtime"
+	@echo "  unix        - Build for UNIX or Linux"
 	@echo ""
 	@echo "Usage:"
 	@echo "  make pull-djgpp  # First time setup"
