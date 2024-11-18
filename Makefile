@@ -42,9 +42,6 @@ OBJS =	actors.o ballop.o clockr.o demons.o dgame.o dinit.o dmain.o\
 # CSDPMI settings
 CSDPMI_URL = http://na.mirror.garr.it/mirrors/djgpp/current/v2misc/csdpmi7b.zip
 
-# Main target
-all: $(DOS_TARGET)
-
 # Build the DOS executable with case handling
 $(DOS_TARGET): $(OBJS) dtextc.dat
 	$(CC) $(CFLAGS) -o $(TEMP_TARGET) $(OBJS) $(LIBS)
@@ -96,7 +93,7 @@ msdos: pull-djgpp get-csdpmi $(DOS_TARGET)
 unix:
 	gcc *.c -o zork
 
-all: unix msdos pull-djgpp
+all: unix pull-djgpp msdos pull-mingw windows
 
 windows: pull-mingw
 	$(DOCKER_RUN) -u $(USER_ID):$(GROUP_ID) $(MINGW_IMAGE) /bin/sh -c "cd /src && $(MINGW_CC) $(CSRC) -o $(WINDOWS_TARGET)"
@@ -113,18 +110,21 @@ help:
 	@echo "Dungeon/Zork Makefile with DJGPP Docker support"
 	@echo ""
 	@echo "Targets:"
-	@echo "  msdos       - Build complete DOS version with CSDPMI"
+	@echo "  msdos       - Build complete DOS version with CSDPMI (using Docker)"
 	@echo "  run         - Build and run in DOSBox"
 	@echo "  clean       - Remove built files"
 	@echo "  pull-djgpp  - Pull the DJGPP Docker image"
 	@echo "  get-csdpmi  - Download CSDPMI runtime"
 	@echo "  unix        - Build for UNIX or Linux"
+	@echo "  windows     - Build for Windows (using docker)"
 	@echo ""
 	@echo "Usage:"
 	@echo "  make pull-djgpp  # First time setup"
 	@echo "  make msdos       # Build complete DOS version"
 	@echo "  make run         # Build and run in DOSBox"
 	@echo "  make unix        # Build on UNIX or Linux"
+	@echo "  make windows     # Build for Windows on Unix or Linux"
+	@echo "  make             # Make all"
 	@echo "  make clean       # Clean up"
 
 .PHONY: all msdos clean pull-djgpp get-csdpmi run help
