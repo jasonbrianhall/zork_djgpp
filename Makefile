@@ -12,10 +12,12 @@ GROUP_ID = $(shell id -g)
 # Output names - using uppercase for DOS convention
 DOS_TARGET = ZORK.EXE
 WINDOWS_TARGET = zork_windows.exe
+
 TEMP_TARGET = temp_zork.exe  # Temporary target for case-sensitivity handling
 
 # Compiler settings (inside Docker DJGPP environment)
 CC = $(DOCKER_RUN) -u $(USER_ID):$(GROUP_ID) $(DJGPP_IMAGE) gcc
+MINGW_CC = x86_64-w64-mingw32-gcc
 CFLAGS = -Wall
 
 # Terminal handling - using option 4 (no more facility) for DOS
