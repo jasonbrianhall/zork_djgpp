@@ -9,7 +9,7 @@ Ready to explore the Great Underground Empire? This version lets you venture for
 
 Grab pre-compiled adventures instantly at: https://github.com/jasonbrianhall/zork_djgpp/releases
 
-Forge your own path with Docker:
+Forge your own path (Default build uses Docker for Windows and DJGPP but not necessarily required [see .github/actions/release.yml]):
 ```bash
 make all           # Unleash all versions
 make msdos         # Summon DOS version
