@@ -82,16 +82,16 @@ jobs:
         asset_name: zork-${{ steps.date.outputs.date }}-linux.tar.gz
         asset_content_type: application/gzip
 
-    - name: Upload Windows Binary
+    - name: Upload Windows Package
       uses: actions/upload-release-asset@v1
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
         upload_url: ${{ steps.create_release.outputs.upload_url }}
-        asset_path: ./zork_windows.exe
-        asset_name: zork-${{ steps.date.outputs.date }}-windows.exe
-        asset_content_type: application/octet-stream
-
+        asset_path: ./zork-windows.zip
+        asset_name: zork-${{ steps.date.outputs.date }}-windows.zip
+        asset_content_type: application/zip
+    
     - name: Upload DOS Package
       uses: actions/upload-release-asset@v1
       env:
