@@ -144,7 +144,7 @@ to remove the FORTRAN I/O library, to add simple more processing, and
 to change the format of the database file.  Andre Srinivasan
 (andre@cs.pitt.edu) help test it.  Jonathan Mark
 (uunet!microsoft!jonm) made it work under MS-DOS and Microsoft C.
-
+```
 <!-- HTML Meta Tags for SEO -->
 <meta name="description" content="Embark on the ultimate text adventure with this enhanced cross-platform Zork implementation">
 <meta name="keywords" content="zork, dungeon, text adventure, dos games, djgpp, retro gaming, cross-platform, interactive fiction, infocom, classic games, adventure games">
