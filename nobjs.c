@@ -11,9 +11,7 @@
 
 static int mirpan_ P((int, int));
 
-int nobjs_(ri, arg)
-int ri;
-int arg;
+int nobjs_(int ri, int arg)
 {
     /* System generated locals */
     int i__1, i__2;
@@ -855,9 +853,7 @@ L21200:
 
 /* DECLARATIONS */
 
-static int mirpan_(st, pnf)
-int st;
-int pnf;
+static int mirpan_(int st, int pnf)
 {
     /* System generated locals */
     int i__1;

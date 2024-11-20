@@ -12,10 +12,7 @@ static int thisit_ P((int, int, int, int));
 
 /* THIS ROUTINE DETAILS ON BIT 3 OF PRSFLG */
 
-int getobj_(oidx, aidx, spcobj)
-int oidx;
-int aidx;
-int spcobj;
+int getobj_(int oidx, int aidx, int spcobj)
 {
     /* System generated locals */
     int ret_val, i__1;
@@ -148,13 +145,7 @@ L1500:
 
 /* DECLARATIONS */
 
-int schlst_(oidx, aidx, rm, cn, ad, spcobj)
-int oidx;
-int aidx;
-int rm;
-int cn;
-int ad;
-int spcobj;
+int schlst_(int oidx, int aidx, int rm, int cn, int ad, int spcobj)
 {
     /* System generated locals */
     int ret_val, i__1, i__2;
@@ -252,11 +243,7 @@ L2000:
 
 /* DECLARATIONS */
 
-static int thisit_(oidx, aidx, obj, spcobj)
-int oidx;
-int aidx;
-int obj;
-int spcobj;
+static int thisit_(int oidx, int aidx, int obj, int spcobj)
 {
     /* Initialized data */
 

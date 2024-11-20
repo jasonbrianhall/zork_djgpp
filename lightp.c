@@ -7,8 +7,7 @@
 #include "funcs.h"
 #include "vars.h"
 
-int lightp_(obj)
-int obj;
+int lightp_(int obj)
 {
     /* System generated locals */
     int ret_val;

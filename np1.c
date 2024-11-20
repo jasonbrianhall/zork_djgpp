@@ -15,10 +15,7 @@
 
 /* THIS ROUTINE DETAILS ON BIT 2 OF PRSFLG */
 
-int sparse_(lbuf, llnt, vbflag)
-const int *lbuf;
-int llnt;
-int vbflag;
+int sparse_(const int *lbuf, int llnt, int vbflag)
 {
     /* Initialized data */
 

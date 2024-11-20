@@ -206,9 +206,7 @@ L5000:
 
 /* DECLARATIONS */
 
-static void unpack_(oldj, j)
-int oldj;
-int *j;
+static void unpack_(int oldj, int *j)
 {
     /* Local variables */
     int i;
