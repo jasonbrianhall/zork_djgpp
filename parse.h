@@ -11,7 +11,7 @@
 #define EXTERN extern
 #endif
 
-EXTERN struct {
+EXTERN struct pv_struct {
     int act, o1, o2, p1, p2;
 } pv_;
 
@@ -20,7 +20,7 @@ EXTERN struct {
 #define objvec ((int *)&pv_1 + 1)
 #define prpvec ((int *)&pv_1 + 3)
 
-EXTERN struct {
+EXTERN struct syntax_struct {
     int vflag, dobj, dfl1, dfl2, dfw1, dfw2, iobj, ifl1, ifl2, ifw1, ifw2;
 
 } syntax_;
@@ -54,7 +54,7 @@ EXTERN struct {
 /* 	DATA BVOC/3RAND,0,2RBY,0,2RIS,0,1RA,0, */
 /* &		2RAN,0,3RTHE,0,3RRUN,0,2RGO,0,3RPRO,3RCEE,0,0/ */
 
-EXTERN const struct {
+EXTERN const struct buzvoc_struct {
     int bvoc[20];
 } buzvoc_
 #ifdef INIT
@@ -74,7 +74,7 @@ EXTERN const struct {
 /* &		3RDOW,1RN,6,2RUP,0,7,3RUND,2RER,8,2ROF,0,9,2RON,0,10, */
 /* &		3ROFF,0,11/ */
 
-EXTERN const struct {
+EXTERN const struct prpvoc_struct {
     int pvoc[45];
 } prpvoc_
 #ifdef INIT
@@ -102,7 +102,7 @@ EXTERN const struct {
 /* &	 2RIN,0,"32000, */
 /* &	 3RCRO,2RSS,"36000/ */
 
-EXTERN const struct {
+EXTERN const struct dirvoc_struct {
     int dvoc[75];
 } dirvoc_
 #ifdef INIT

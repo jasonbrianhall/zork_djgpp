@@ -94,8 +94,8 @@ int init_()
     /* Local variables */
     int xmax, r2max, dirmax, recno;
     int i, j, k;
-    register int ch;
-    register FILE *indxfile;
+    int ch;
+    FILE *indxfile;
     int mmax, omax, rmax, vmax, amax, cmax, fmax, smax;
 
     more_init();
