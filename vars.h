@@ -19,34 +19,33 @@
 #define prsvec_1 prsvec_
 
 
-EXTERN struct {
+EXTERN struct prsvec_struct {
     int prsa, prsi, prso;
     int prswon;
     int prscon;
 } prsvec_;
 
-
-EXTERN struct {
+EXTERN struct orphs_struct {
     int oflag, oact, oslot, oprep, oname;
 } orphs_;
 
 #define orphs_1 orphs_
 #define orp ((int *)&orphs_1)
 
-EXTERN struct {
+EXTERN struct last_struct {
     int lastit;
 } last_;
 
 #define last_1 last_
 
-EXTERN struct {
+EXTERN struct play_struct {
     int winner, here;
     int telflg;
 } play_;
 
 #define play_1 play_
 
-EXTERN struct {
+EXTERN struct rooms_struct {
     int rlnt, rdesc1[200], rdesc2[200], rexit[200], ractio[200],
 	    rval[200], rflag[200];
 } rooms_;
@@ -70,7 +69,7 @@ EXTERN struct {
 #define RNWALL (32)
 #define REND (16)
 
-EXTERN const struct {
+EXTERN const struct rindex_struct {
     int whous, lroom, cella, mtrol, maze1, mgrat, maz15, fore1, fore3, 
 	    clear, reser, strea, egypt, echor, tshaf, bshaf, mmach, dome, 
 	    mtorc, carou, riddl, lld2, temp1, temp2, maint, blroo, treas, 
@@ -95,7 +94,7 @@ EXTERN const struct {
 
 #define rindex_1 rindex_
 
-EXTERN const struct {
+EXTERN const struct xsrch_struct {
     int xmin, xmax, xdown, xup, xnorth, xsouth, xenter, xexit, xeast, 
 	    xwest;
 } xsrch_
@@ -107,7 +106,7 @@ EXTERN const struct {
 
 #define xsrch_1 xsrch_
 
-EXTERN struct {
+EXTERN struct objcs_struct {
     int olnt, odesc1[220], odesc2[220], odesco[220], oactio[220], oflag1[
 	    220], oflag2[220], ofval[220], otval[220], osize[220], ocapac[220]
 	    , oroom[220], oadv[220], ocan[220], oread[220];
@@ -116,7 +115,7 @@ EXTERN struct {
 #define objcts_1 objcts_
 #define eqo ((int *)&objcts_1 + 1)
 
-EXTERN struct {
+EXTERN struct oroom2_struct {
     int r2lnt, oroom2[20], rroom2[20];
 } oroom2_;
 
@@ -157,7 +156,7 @@ EXTERN struct {
 #define VEHBT (2)
 #define SCHBT (1)
 
-EXTERN const struct {
+EXTERN const struct oindex_struct {
     int garli, food, gunk, coal, machi, diamo, tcase, bottl, water, rope, 
 	    knife, sword, lamp, blamp, rug, leave, troll, axe, rknif, keys, 
 	    ice, bar, coffi, torch, tbask, fbask, irbox, ghost, trunk, bell, 
@@ -187,7 +186,7 @@ EXTERN const struct {
 
 #define oindex_1 oindex_
 
-EXTERN struct {
+EXTERN struct cevent_struct {
     int clnt, ctick[25], cactio[25];
     int cflag[25];
 } cevent_;
@@ -195,7 +194,7 @@ EXTERN struct {
 #define cevent_1 cevent_
 #define eqc ((int *)&cevent_1 + 1)
 
-EXTERN const struct {
+EXTERN const struct cindex_struct {
     int cevcur, cevmnt, cevlnt, cevmat, cevcnd, cevbal, cevbrn, cevfus, 
 	    cevled, cevsaf, cevvlg, cevgno, cevbuc, cevsph, cevegh, cevfor, 
 	    cevscl, cevzgi, cevzgo, cevste, cevmrs, cevpin, cevinq, cevfol;
@@ -208,7 +207,7 @@ EXTERN const struct {
 
 #define cindex_1 cindex_
 
-EXTERN struct {
+EXTERN struct advs_struct {
     int alnt, aroom[4], ascore[4], avehic[4], aobj[4], aactio[4], astren[
 	    4], aflag[4];
 } advs_;
@@ -216,7 +215,7 @@ EXTERN struct {
 #define advs_1 advs_
 #define eqa ((int *)&advs_1 + 1)
 
-EXTERN const struct {
+EXTERN const struct aflags_struct {
     int astag;
 } aflags_
 #ifdef INIT
@@ -226,7 +225,7 @@ EXTERN const struct {
 
 #define aflags_1 aflags_
 
-EXTERN const struct {
+EXTERN const struct aindex_struct {
     int player, arobot, amastr;
 } aindex_
 #ifdef INIT
@@ -236,7 +235,7 @@ EXTERN const struct {
 
 #define aindex_1 aindex_
 
-EXTERN const struct {
+EXTERN const struct vindex_struct {
     int cintw, deadxw, frstqw, inxw, outxw, walkiw, fightw, foow, meltw, 
 	    readw, inflaw, deflaw, alarmw, exorcw, plugw, kickw, wavew, 
 	    raisew, lowerw, rubw, pushw, untiew, tiew, tieupw, turnw, breatw, 
@@ -259,7 +258,7 @@ EXTERN const struct {
 
 #define vindex_1 vindex_
 
-EXTERN struct {
+EXTERN struct findex_struct {
     int trollf, cagesf, bucktf, caroff, carozf, lwtidf, domef, glacrf, 
 	    echof, riddlf, lldf, cyclof, magicf, litldf, safef, gnomef, 
 	    gnodrf, mirrmf, egyptf, onpolf, blabf, brieff, superf, buoyf, 
@@ -275,13 +274,13 @@ EXTERN struct {
 #define flags ((int *)&findex_1)
 #define switch_ ((int *)&findex_1 + 46)
 
-EXTERN struct {
+EXTERN struct debug_struct {
     int dbgflg, prsflg, gdtflg;
 } debug_;
 
 #define debug_1 debug_
 
-EXTERN struct {
+EXTERN struct hack_struct {
     int thfpos;
     int thfflg, thfact, swdact;
     int swdsta;
@@ -289,28 +288,28 @@ EXTERN struct {
 
 #define hack_1 hack_
 
-EXTERN struct {
+EXTERN struct vill_struct {
     int vlnt, villns[4], vprob[4], vopps[4], vbest[4], vmelee[4];
 } vill_;
 
 #define vill_1 vill_
 #define eqv ((int *)&vill_1 + 1)
 
-EXTERN struct {
+EXTERN struct state_struct {
     int moves, deaths, rwscor, mxscor, mxload, ltshft, bloc, mungrm, hs, 
 	    egscor, egmxsc;
 } state_;
 
 #define state_1 state_
 
-EXTERN struct {
+EXTERN struct curxt_struct {
     int xtype, xroom1, xstrng, xactio, xobj;
 } curxt_;
 
 #define curxt_1 curxt_
 #define xflag ((int *)&curxt_1 + 4)
 
-EXTERN const struct {
+EXTERN const struct xpars_struct {
     int xrmask, xdmask, xfmask, xfshft, xashft, xelnt[4], xnorm, xno, 
 	    xcond, xdoor, xlflag;
 } xpars_
@@ -321,20 +320,20 @@ EXTERN const struct {
 
 #define xpars_1 xpars_
 
-EXTERN struct {
+EXTERN struct star_struct {
     int mbase, strbit;
 } star_;
 
 #define star_1 star_
 
-EXTERN struct {
+EXTERN struct input_struct {
     int inlnt;
     char inbuf[78];
 } input_;
 
 #define input_1 input_
 
-EXTERN struct {
+EXTERN struct screen_struct {
     int fromdr, scolrm, scolac;
     const int scoldr[8], scolwl[12];
 } screen_
@@ -347,13 +346,13 @@ EXTERN struct {
 
 #define screen_1 screen_
 
-EXTERN struct {
+EXTERN struct rmsg_struct {
     int mlnt, mrloc, rtext[1050];
 } rmsg_;
 
 #define rmsg_1 rmsg_
 
-EXTERN const struct {
+EXTERN const struct vers_struct {
     int vmaj, vmin, vedit;
 } vers_
 #ifdef INIT
@@ -363,13 +362,13 @@ EXTERN const struct {
 
 #define vers_1 vers_
 
-EXTERN struct {
+EXTERN struct time_struct {
     int pltime, shour, smin, ssec;
 } time_;
 
 #define time_1 time_
 
-EXTERN const struct {
+EXTERN const struct hyper_struct {
     int hfactr;
 } hyper_
 #ifdef INIT
@@ -379,13 +378,13 @@ EXTERN const struct {
 
 #define hyper_1 hyper_
 
-EXTERN struct {
+EXTERN struct exits_struct {
     int xlnt, travel[900];
 } exits_;
 
 #define exits_1 exits_
 
-EXTERN struct {
+EXTERN struct puzzle_struct {
     const int cpdr[16], cpwl[8];
     int cpvec[64];
 } puzzle_
@@ -406,7 +405,7 @@ EXTERN struct {
 
 #define puzzle_1 puzzle_
 
-EXTERN const struct {
+EXTERN const struct bats_struct {
     const int batdrp[9];
 } bats_
 #ifdef INIT
