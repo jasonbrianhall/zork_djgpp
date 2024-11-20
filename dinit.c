@@ -111,7 +111,7 @@ int init_()
 
 /* FIRST CHECK FOR PROTECTION VIOLATION */
 
-    if (protected()) {
+    if (is_protected()) {
 	goto L10000;
     }
 /* 						!PROTECTION VIOLATION? */

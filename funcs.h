@@ -42,8 +42,12 @@
 #define max(a,b) ((a) >= (b) ? (a) : (b))
 
 extern int
+    is_protected P((void)),
+    wizard P((void));
+
+/*extern int
 	protected P((void)),
-	wizard P((void));
+	wizard P((void)); */
 
 extern void
 	more_init P((void)),

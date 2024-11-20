@@ -22,7 +22,7 @@
 #endif /* ! BSD4_2 */
 #endif /* NONBUSINESS */
 
-int protected()
+int is_protected()
 {
 #ifndef NONBUSINESS
 

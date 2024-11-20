@@ -16,13 +16,15 @@
 #define EXTERN extern
 #endif
 
+#define prsvec_1 prsvec_
+
+
 EXTERN struct {
     int prsa, prsi, prso;
     int prswon;
     int prscon;
 } prsvec_;
 
-#define prsvec_1 prsvec_
 
 EXTERN struct {
     int oflag, oact, oslot, oprep, oname;
