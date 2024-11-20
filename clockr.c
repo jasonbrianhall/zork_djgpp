@@ -10,8 +10,7 @@
 static void litint_ P((int, int *, int, const int *,
 		       int));
 
-void cevapp_(ri)
-int ri;
+void cevapp_(int ri)
 {
     /* Initialized data */
 
@@ -763,12 +762,7 @@ L24100:
 
 /* DECLARATIONS */
 
-static void litint_(obj, ctr, cev, ticks, tickln)
-int obj;
-int *ctr;
-int cev;
-const int *ticks;
-int tickln;
+static void litint_(int obj, int *ctr, int cev, const int *ticks, int tickln)
 {
     /* Parameter adjustments */
     --ticks;

@@ -7,8 +7,7 @@
 #include "funcs.h"
 #include "vars.h"
 
-int ballop_(arg)
-int arg;
+int ballop_(int arg)
 {
     /* System generated locals */
     int ret_val;

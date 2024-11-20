@@ -205,8 +205,7 @@ L2900:
 
 /* DECLARATIONS */
 
-static void xendmv_(flag)
-int flag;
+static void xendmv_(int flag)
 {
     /* Local variables */
     int f;
@@ -241,8 +240,7 @@ int flag;
 
 /* DECLARATIONS */
 
-static int xvehic_(n)
-int n;
+static int xvehic_(int n)
 {
     /* System generated locals */
     int ret_val;
