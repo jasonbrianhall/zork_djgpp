@@ -8,23 +8,23 @@
 #include "vars.h"
 #include "parse.h"
 
-static logical thisit_ P((integer, integer, integer, integer));
+static int thisit_ P((int, int, int, int));
 
 /* THIS ROUTINE DETAILS ON BIT 3 OF PRSFLG */
 
-integer getobj_(oidx, aidx, spcobj)
-integer oidx;
-integer aidx;
-integer spcobj;
+int getobj_(oidx, aidx, spcobj)
+int oidx;
+int aidx;
+int spcobj;
 {
     /* System generated locals */
-    integer ret_val, i__1;
+    int ret_val, i__1;
 
     /* Local variables */
-    integer i, av;
-    integer obj;
-    integer nobj;
-    logical chomp;
+    int i, av;
+    int obj;
+    int nobj;
+    int chomp;
 
 /* GETOBJ, PAGE 2 */
 
@@ -148,19 +148,19 @@ L1500:
 
 /* DECLARATIONS */
 
-integer schlst_(oidx, aidx, rm, cn, ad, spcobj)
-integer oidx;
-integer aidx;
-integer rm;
-integer cn;
-integer ad;
-integer spcobj;
+int schlst_(oidx, aidx, rm, cn, ad, spcobj)
+int oidx;
+int aidx;
+int rm;
+int cn;
+int ad;
+int spcobj;
 {
     /* System generated locals */
-    integer ret_val, i__1, i__2;
+    int ret_val, i__1, i__2;
 
     /* Local variables */
-    integer i, j, x;
+    int i, j, x;
 
     ret_val = 0;
 /* 						!NO RESULT. */
@@ -252,11 +252,11 @@ L2000:
 
 /* DECLARATIONS */
 
-static logical thisit_(oidx, aidx, obj, spcobj)
-integer oidx;
-integer aidx;
-integer obj;
-integer spcobj;
+static int thisit_(oidx, aidx, obj, spcobj)
+int oidx;
+int aidx;
+int obj;
+int spcobj;
 {
     /* Initialized data */
 
@@ -265,13 +265,13 @@ integer spcobj;
 /*       IN RADIX-50 NOTATION, AN "A" IN THE FIRST POSITION IS */
 /*       ENCODED AS 1*40*40 = 1600. */
 
-    const integer r50min = 1600;
+    const int r50min = 1600;
 
     /* System generated locals */
-    logical ret_val;
+    int ret_val;
 
     /* Local variables */
-    integer i;
+    int i;
 
     ret_val = FALSE_;
 /* 						!ASSUME NO MATCH. */

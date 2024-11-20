@@ -35,35 +35,35 @@ FILE *dbfile;
 #define LOCALTEXTFILE "dtextc.dat"
 #endif
 
-/* Read a single two byte integer from the index file */
+/* Read a single two byte int from the index file */
 
 #define rdint(indxfile) \
     (ch = getc(indxfile), \
      ((ch > 127) ? (ch - 256) : (ch)) * 256 + getc(indxfile))
 
-/* Read a number of two byte integers from the index file */
+/* Read a number of two byte ints from the index file */
 
 static void rdints(c, pi, indxfile)
-integer c;
-integer *pi;
+int c;
+int *pi;
 FILE *indxfile;
 {
-    integer ch;	/* Local variable for rdint */
+    int ch;	/* Local variable for rdint */
 
     while (c-- != 0)
 	*pi++ = rdint(indxfile);
 }
 
-/* Read a partial array of integers.  These are stored as index,value
+/* Read a partial array of ints.  These are stored as index,value
  * pairs.
  */
 
 static void rdpartialints(c, pi, indxfile)
-integer c;
-integer *pi;
+int c;
+int *pi;
 FILE *indxfile;
 {
-    integer ch;	/* Local variable for rdint */
+    int ch;	/* Local variable for rdint */
 
     while (1) {
 	int i;
@@ -86,26 +86,26 @@ FILE *indxfile;
 /* Read a number of one byte flags from the index file */
 
 static void rdflags(c, pf, indxfile)
-integer c;
-logical *pf;
+int c;
+int *pf;
 FILE *indxfile;
 {
     while (c-- != 0)
 	*pf++ = getc(indxfile);
 }
 
-logical init_()
+int init_()
 {
     /* System generated locals */
-    integer i__1;
-    logical ret_val;
+    int i__1;
+    int ret_val;
 
     /* Local variables */
-    integer xmax, r2max, dirmax, recno;
-    integer i, j, k;
-    register integer ch;
+    int xmax, r2max, dirmax, recno;
+    int i, j, k;
+    register int ch;
     register FILE *indxfile;
-    integer mmax, omax, rmax, vmax, amax, cmax, fmax, smax;
+    int mmax, omax, rmax, vmax, amax, cmax, fmax, smax;
 
     more_init();
 

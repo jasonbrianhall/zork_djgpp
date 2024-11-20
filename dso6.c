@@ -7,12 +7,12 @@
 #include "funcs.h"
 #include "vars.h"
 
-logical ghere_(obj, rm)
-integer obj;
-integer rm;
+int ghere_(obj, rm)
+int obj;
+int rm;
 {
     /* System generated locals */
-    logical ret_val;
+    int ret_val;
 
     ret_val = TRUE_;
 /* 						!ASSUME WINS. */
@@ -130,11 +130,11 @@ L11000:
 
 /* DECLARATIONS */
 
-integer mrhere_(rm)
-integer rm;
+int mrhere_(rm)
+int rm;
 {
     /* System generated locals */
-    integer ret_val, i__1;
+    int ret_val, i__1;
 
     if (rm < rindex_1.mrae || rm > rindex_1.mrdw) {
 	goto L100;

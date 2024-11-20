@@ -7,24 +7,24 @@
 #include "funcs.h"
 #include "vars.h"
 
-logical oappli_(ri, arg)
-integer ri;
-integer arg;
+int oappli_(ri, arg)
+int ri;
+int arg;
 {
     /* Initialized data */
 
-    const integer mxsmp = 99;
+    const int mxsmp = 99;
 
     /* System generated locals */
-    integer i__1;
-    logical ret_val;
+    int i__1;
+    int ret_val;
 
     /* Local variables */
-    logical f;
-    integer flobts, i;
-    integer j, av, io, ir, iz;
-    integer odi2 = 0, odo2 = 0;
-    integer nloc;
+    int f;
+    int flobts, i;
+    int j, av, io, ir, iz;
+    int odi2 = 0, odo2 = 0;
+    int nloc;
 
     if (ri == 0) {
 	goto L10;

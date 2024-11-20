@@ -7,15 +7,15 @@
 #include "funcs.h"
 #include "vars.h"
 
-logical aappli_(ri)
-integer ri;
+int aappli_(ri)
+int ri;
 {
     /* System generated locals */
-    logical ret_val;
+    int ret_val;
 
     /* Local variables */
-    logical f;
-    integer i;
+    int f;
+    int i;
 
     if (ri == 0) {
 	goto L10;
@@ -142,12 +142,12 @@ L2200:
 void thiefd_()
 {
     /* System generated locals */
-    integer i__1, i__2;
+    int i__1, i__2;
 
     /* Local variables */
-    integer i, j, nr;
-    logical once;
-    integer rhere;
+    int i, j, nr;
+    int once;
+    int rhere;
 
 /* 						!SET UP DETAIL FLAG. */
     once = FALSE_;

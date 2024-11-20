@@ -10,12 +10,12 @@
 
 /* DECLARATIONS */
 
-static integer cxappl_ P((integer));
+static int cxappl_ P((int));
 
 void savegm_()
 {
     /* Local variables */
-    integer i;
+    int i;
     FILE *e;
 
     prsvec_1.prswon = FALSE_;
@@ -31,60 +31,60 @@ void savegm_()
 #define do_uio(i, zbuf, cbytes) \
 	(void) fwrite((const char *)(zbuf), (cbytes), (i), e)
 
-    do_uio(1, &vers_1.vmaj, sizeof(integer));
-    do_uio(1, &vers_1.vmin, sizeof(integer));
-    do_uio(1, &vers_1.vedit, sizeof(integer));
+    do_uio(1, &vers_1.vmaj, sizeof(int));
+    do_uio(1, &vers_1.vmin, sizeof(int));
+    do_uio(1, &vers_1.vedit, sizeof(int));
 
-    do_uio(1, &play_1.winner, sizeof(integer));
-    do_uio(1, &play_1.here, sizeof(integer));
-    do_uio(1, &hack_1.thfpos, sizeof(integer));
-    do_uio(1, &play_1.telflg, sizeof(logical));
-    do_uio(1, &hack_1.thfflg, sizeof(logical));
-    do_uio(1, &hack_1.thfact, sizeof(logical));
-    do_uio(1, &hack_1.swdact, sizeof(logical));
-    do_uio(1, &hack_1.swdsta, sizeof(integer));
-    do_uio(64, &puzzle_1.cpvec[0], sizeof(integer));
+    do_uio(1, &play_1.winner, sizeof(int));
+    do_uio(1, &play_1.here, sizeof(int));
+    do_uio(1, &hack_1.thfpos, sizeof(int));
+    do_uio(1, &play_1.telflg, sizeof(int));
+    do_uio(1, &hack_1.thfflg, sizeof(int));
+    do_uio(1, &hack_1.thfact, sizeof(int));
+    do_uio(1, &hack_1.swdact, sizeof(int));
+    do_uio(1, &hack_1.swdsta, sizeof(int));
+    do_uio(64, &puzzle_1.cpvec[0], sizeof(int));
 
-    do_uio(1, &i, sizeof(integer));
-    do_uio(1, &state_1.moves, sizeof(integer));
-    do_uio(1, &state_1.deaths, sizeof(integer));
-    do_uio(1, &state_1.rwscor, sizeof(integer));
-    do_uio(1, &state_1.egscor, sizeof(integer));
-    do_uio(1, &state_1.mxload, sizeof(integer));
-    do_uio(1, &state_1.ltshft, sizeof(integer));
-    do_uio(1, &state_1.bloc, sizeof(integer));
-    do_uio(1, &state_1.mungrm, sizeof(integer));
-    do_uio(1, &state_1.hs, sizeof(integer));
-    do_uio(1, &screen_1.fromdr, sizeof(integer));
-    do_uio(1, &screen_1.scolrm, sizeof(integer));
-    do_uio(1, &screen_1.scolac, sizeof(integer));
+    do_uio(1, &i, sizeof(int));
+    do_uio(1, &state_1.moves, sizeof(int));
+    do_uio(1, &state_1.deaths, sizeof(int));
+    do_uio(1, &state_1.rwscor, sizeof(int));
+    do_uio(1, &state_1.egscor, sizeof(int));
+    do_uio(1, &state_1.mxload, sizeof(int));
+    do_uio(1, &state_1.ltshft, sizeof(int));
+    do_uio(1, &state_1.bloc, sizeof(int));
+    do_uio(1, &state_1.mungrm, sizeof(int));
+    do_uio(1, &state_1.hs, sizeof(int));
+    do_uio(1, &screen_1.fromdr, sizeof(int));
+    do_uio(1, &screen_1.scolrm, sizeof(int));
+    do_uio(1, &screen_1.scolac, sizeof(int));
 
-    do_uio(220, &objcts_1.odesc1[0], sizeof(integer));
-    do_uio(220, &objcts_1.odesc2[0], sizeof(integer));
-    do_uio(220, &objcts_1.oflag1[0], sizeof(integer));
-    do_uio(220, &objcts_1.oflag2[0], sizeof(integer));
-    do_uio(220, &objcts_1.ofval[0], sizeof(integer));
-    do_uio(220, &objcts_1.otval[0], sizeof(integer));
-    do_uio(220, &objcts_1.osize[0], sizeof(integer));
-    do_uio(220, &objcts_1.ocapac[0], sizeof(integer));
-    do_uio(220, &objcts_1.oroom[0], sizeof(integer));
-    do_uio(220, &objcts_1.oadv[0], sizeof(integer));
-    do_uio(220, &objcts_1.ocan[0], sizeof(integer));
+    do_uio(220, &objcts_1.odesc1[0], sizeof(int));
+    do_uio(220, &objcts_1.odesc2[0], sizeof(int));
+    do_uio(220, &objcts_1.oflag1[0], sizeof(int));
+    do_uio(220, &objcts_1.oflag2[0], sizeof(int));
+    do_uio(220, &objcts_1.ofval[0], sizeof(int));
+    do_uio(220, &objcts_1.otval[0], sizeof(int));
+    do_uio(220, &objcts_1.osize[0], sizeof(int));
+    do_uio(220, &objcts_1.ocapac[0], sizeof(int));
+    do_uio(220, &objcts_1.oroom[0], sizeof(int));
+    do_uio(220, &objcts_1.oadv[0], sizeof(int));
+    do_uio(220, &objcts_1.ocan[0], sizeof(int));
 
-    do_uio(200, &rooms_1.rval[0], sizeof(integer));
-    do_uio(200, &rooms_1.rflag[0], sizeof(integer));
+    do_uio(200, &rooms_1.rval[0], sizeof(int));
+    do_uio(200, &rooms_1.rflag[0], sizeof(int));
 
-    do_uio(4, &advs_1.aroom[0], sizeof(integer));
-    do_uio(4, &advs_1.ascore[0], sizeof(integer));
-    do_uio(4, &advs_1.avehic[0], sizeof(integer));
-    do_uio(4, &advs_1.astren[0], sizeof(integer));
-    do_uio(4, &advs_1.aflag[0], sizeof(integer));
+    do_uio(4, &advs_1.aroom[0], sizeof(int));
+    do_uio(4, &advs_1.ascore[0], sizeof(int));
+    do_uio(4, &advs_1.avehic[0], sizeof(int));
+    do_uio(4, &advs_1.astren[0], sizeof(int));
+    do_uio(4, &advs_1.aflag[0], sizeof(int));
 
-    do_uio(46, &flags[0], sizeof(logical));
-    do_uio(22, &switch_[0], sizeof(integer));
-    do_uio(4, &vill_1.vprob[0], sizeof(integer));
-    do_uio(25, &cevent_1.cflag[0], sizeof(logical));
-    do_uio(25, &cevent_1.ctick[0], sizeof(integer));
+    do_uio(46, &flags[0], sizeof(int));
+    do_uio(22, &switch_[0], sizeof(int));
+    do_uio(4, &vill_1.vprob[0], sizeof(int));
+    do_uio(25, &cevent_1.cflag[0], sizeof(int));
+    do_uio(25, &cevent_1.ctick[0], sizeof(int));
 
 #undef do_uio
 
@@ -106,7 +106,7 @@ L100:
 void rstrgm_()
 {
     /* Local variables */
-    integer i, j, k;
+    int i, j, k;
     FILE *e;
 
     prsvec_1.prswon = FALSE_;
@@ -119,64 +119,64 @@ void rstrgm_()
 #define do_uio(i, zbuf, cbytes) \
 	(void)fread((char *)(zbuf), (cbytes), (i), e)
 
-    do_uio(1, &i, sizeof(integer));
-    do_uio(1, &j, sizeof(integer));
-    do_uio(1, &k, sizeof(integer));
+    do_uio(1, &i, sizeof(int));
+    do_uio(1, &j, sizeof(int));
+    do_uio(1, &k, sizeof(int));
 
     if (i != vers_1.vmaj | j != vers_1.vmin) {
 	goto L200;
     }
 
-    do_uio(1, &play_1.winner, sizeof(integer));
-    do_uio(1, &play_1.here, sizeof(integer));
-    do_uio(1, &hack_1.thfpos, sizeof(integer));
-    do_uio(1, &play_1.telflg, sizeof(logical));
-    do_uio(1, &hack_1.thfflg, sizeof(logical));
-    do_uio(1, &hack_1.thfact, sizeof(logical));
-    do_uio(1, &hack_1.swdact, sizeof(logical));
-    do_uio(1, &hack_1.swdsta, sizeof(integer));
-    do_uio(64, &puzzle_1.cpvec[0], sizeof(integer));
+    do_uio(1, &play_1.winner, sizeof(int));
+    do_uio(1, &play_1.here, sizeof(int));
+    do_uio(1, &hack_1.thfpos, sizeof(int));
+    do_uio(1, &play_1.telflg, sizeof(int));
+    do_uio(1, &hack_1.thfflg, sizeof(int));
+    do_uio(1, &hack_1.thfact, sizeof(int));
+    do_uio(1, &hack_1.swdact, sizeof(int));
+    do_uio(1, &hack_1.swdsta, sizeof(int));
+    do_uio(64, &puzzle_1.cpvec[0], sizeof(int));
 
-    do_uio(1, &time_1.pltime, sizeof(integer));
-    do_uio(1, &state_1.moves, sizeof(integer));
-    do_uio(1, &state_1.deaths, sizeof(integer));
-    do_uio(1, &state_1.rwscor, sizeof(integer));
-    do_uio(1, &state_1.egscor, sizeof(integer));
-    do_uio(1, &state_1.mxload, sizeof(integer));
-    do_uio(1, &state_1.ltshft, sizeof(integer));
-    do_uio(1, &state_1.bloc, sizeof(integer));
-    do_uio(1, &state_1.mungrm, sizeof(integer));
-    do_uio(1, &state_1.hs, sizeof(integer));
-    do_uio(1, &screen_1.fromdr, sizeof(integer));
-    do_uio(1, &screen_1.scolrm, sizeof(integer));
-    do_uio(1, &screen_1.scolac, sizeof(integer));
+    do_uio(1, &time_1.pltime, sizeof(int));
+    do_uio(1, &state_1.moves, sizeof(int));
+    do_uio(1, &state_1.deaths, sizeof(int));
+    do_uio(1, &state_1.rwscor, sizeof(int));
+    do_uio(1, &state_1.egscor, sizeof(int));
+    do_uio(1, &state_1.mxload, sizeof(int));
+    do_uio(1, &state_1.ltshft, sizeof(int));
+    do_uio(1, &state_1.bloc, sizeof(int));
+    do_uio(1, &state_1.mungrm, sizeof(int));
+    do_uio(1, &state_1.hs, sizeof(int));
+    do_uio(1, &screen_1.fromdr, sizeof(int));
+    do_uio(1, &screen_1.scolrm, sizeof(int));
+    do_uio(1, &screen_1.scolac, sizeof(int));
 
-    do_uio(220, &objcts_1.odesc1[0], sizeof(integer));
-    do_uio(220, &objcts_1.odesc2[0], sizeof(integer));
-    do_uio(220, &objcts_1.oflag1[0], sizeof(integer));
-    do_uio(220, &objcts_1.oflag2[0], sizeof(integer));
-    do_uio(220, &objcts_1.ofval[0], sizeof(integer));
-    do_uio(220, &objcts_1.otval[0], sizeof(integer));
-    do_uio(220, &objcts_1.osize[0], sizeof(integer));
-    do_uio(220, &objcts_1.ocapac[0], sizeof(integer));
-    do_uio(220, &objcts_1.oroom[0], sizeof(integer));
-    do_uio(220, &objcts_1.oadv[0], sizeof(integer));
-    do_uio(220, &objcts_1.ocan[0], sizeof(integer));
+    do_uio(220, &objcts_1.odesc1[0], sizeof(int));
+    do_uio(220, &objcts_1.odesc2[0], sizeof(int));
+    do_uio(220, &objcts_1.oflag1[0], sizeof(int));
+    do_uio(220, &objcts_1.oflag2[0], sizeof(int));
+    do_uio(220, &objcts_1.ofval[0], sizeof(int));
+    do_uio(220, &objcts_1.otval[0], sizeof(int));
+    do_uio(220, &objcts_1.osize[0], sizeof(int));
+    do_uio(220, &objcts_1.ocapac[0], sizeof(int));
+    do_uio(220, &objcts_1.oroom[0], sizeof(int));
+    do_uio(220, &objcts_1.oadv[0], sizeof(int));
+    do_uio(220, &objcts_1.ocan[0], sizeof(int));
 
-    do_uio(200, &rooms_1.rval[0], sizeof(integer));
-    do_uio(200, &rooms_1.rflag[0], sizeof(integer));
+    do_uio(200, &rooms_1.rval[0], sizeof(int));
+    do_uio(200, &rooms_1.rflag[0], sizeof(int));
 
-    do_uio(4, &advs_1.aroom[0], sizeof(integer));
-    do_uio(4, &advs_1.ascore[0], sizeof(integer));
-    do_uio(4, &advs_1.avehic[0], sizeof(integer));
-    do_uio(4, &advs_1.astren[0], sizeof(integer));
-    do_uio(4, &advs_1.aflag[0], sizeof(integer));
+    do_uio(4, &advs_1.aroom[0], sizeof(int));
+    do_uio(4, &advs_1.ascore[0], sizeof(int));
+    do_uio(4, &advs_1.avehic[0], sizeof(int));
+    do_uio(4, &advs_1.astren[0], sizeof(int));
+    do_uio(4, &advs_1.aflag[0], sizeof(int));
 
-    do_uio(46, &flags[0], sizeof(logical));
-    do_uio(22, &switch_[0], sizeof(integer));
-    do_uio(4, &vill_1.vprob[0], sizeof(integer));
-    do_uio(25, &cevent_1.cflag[0], sizeof(logical));
-    do_uio(25, &cevent_1.ctick[0], sizeof(integer));
+    do_uio(46, &flags[0], sizeof(int));
+    do_uio(22, &switch_[0], sizeof(int));
+    do_uio(4, &vill_1.vprob[0], sizeof(int));
+    do_uio(25, &cevent_1.cflag[0], sizeof(int));
+    do_uio(25, &cevent_1.ctick[0], sizeof(int));
 
     (void)fclose(e);
 
@@ -198,10 +198,10 @@ L200:
 
 /* DECLARATIONS */
 
-logical walk_()
+int walk_()
 {
     /* System generated locals */
-    logical ret_val;
+    int ret_val;
 
     ret_val = TRUE_;
 /* 						!ASSUME WINS. */
@@ -351,16 +351,16 @@ L900:
 
 /* DECLARATIONS */
 
-static integer cxappl_(ri)
-integer ri;
+static int cxappl_(ri)
+int ri;
 {
     /* System generated locals */
-    integer ret_val, i__1;
+    int ret_val, i__1;
 
     /* Local variables */
-    integer i, j, k;
-    integer nxt;
-    integer ldir;
+    int i, j, k;
+    int nxt;
+    int ldir;
 
     ret_val = 0;
 /* 						!NO RETURN. */

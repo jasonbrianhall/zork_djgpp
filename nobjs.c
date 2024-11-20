@@ -9,23 +9,23 @@
 #include "funcs.h"
 #include "vars.h"
 
-static logical mirpan_ P((integer, logical));
+static int mirpan_ P((int, int));
 
-logical nobjs_(ri, arg)
-integer ri;
-integer arg;
+int nobjs_(ri, arg)
+int ri;
+int arg;
 {
     /* System generated locals */
-    integer i__1, i__2;
-    logical ret_val;
+    int i__1, i__2;
+    int ret_val;
 
     /* Local variables */
-    logical f;
-    integer target;
-    integer i;
-    integer j;
-    integer av, wl;
-    integer nxt, odi2 = 0, odo2 = 0;
+    int f;
+    int target;
+    int i;
+    int j;
+    int av, wl;
+    int nxt, odi2 = 0, odo2 = 0;
 
     if (prsvec_1.prso != 0) {
 	odo2 = objcts_1.odesc2[prsvec_1.prso - 1];
@@ -855,17 +855,17 @@ L21200:
 
 /* DECLARATIONS */
 
-static logical mirpan_(st, pnf)
-integer st;
-logical pnf;
+static int mirpan_(st, pnf)
+int st;
+int pnf;
 {
     /* System generated locals */
-    integer i__1;
-    logical ret_val;
+    int i__1;
+    int ret_val;
 
     /* Local variables */
-    integer num;
-    integer mrbf;
+    int num;
+    int mrbf;
 
     ret_val = TRUE_;
     num = mrhere_(play_1.here);

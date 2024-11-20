@@ -7,23 +7,23 @@
 #include "funcs.h"
 #include "vars.h"
 
-static void ewtell_ P((integer, integer));
-static void lookto_ P((integer, integer, integer, integer, integer));
+static void ewtell_ P((int, int));
+static void lookto_ P((int, int, int, int, int));
 
-logical rappl2_(ri)
-integer ri;
+int rappl2_(ri)
+int ri;
 {
     /* Initialized data */
 
-    const integer newrms = 38;
+    const int newrms = 38;
 
     /* System generated locals */
-    integer i__1;
-    logical ret_val;
+    int i__1;
+    int ret_val;
 
     /* Local variables */
-    integer i;
-    integer j;
+    int i;
+    int j;
 
     ret_val = TRUE_;
     switch (ri - newrms + 1) {
@@ -410,17 +410,17 @@ L60100:
 /* DECLARATIONS */
 
 static void lookto_(nrm, srm, nt, st, ht)
-integer nrm;
-integer srm;
-integer nt;
-integer st;
-integer ht;
+int nrm;
+int srm;
+int nt;
+int st;
+int ht;
 {
     /* System generated locals */
-    integer i__1;
+    int i__1;
 
     /* Local variables */
-    integer i, m1, dir, mrbf;
+    int i, m1, dir, mrbf;
 
     rspeak_(ht);
 /* 						!DESCRIBE HALL. */
@@ -493,15 +493,15 @@ L200:
 /* DECLARATIONS */
 
 static void ewtell_(rm, st)
-integer rm;
-integer st;
+int rm;
+int st;
 {
     /* System generated locals */
-    integer i__1;
+    int i__1;
 
     /* Local variables */
-    integer i;
-    logical m1;
+    int i;
+    int m1;
 
 /* NOTE THAT WE ARE EAST OR WEST OF MIRROR, AND */
 /* MIRROR MUST BE N-S. */

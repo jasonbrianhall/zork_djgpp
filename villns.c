@@ -7,14 +7,14 @@
 #include "funcs.h"
 #include "vars.h"
 
-logical trollp_(arg)
-integer arg;
+int trollp_(arg)
+int arg;
 {
     /* System generated locals */
-    logical ret_val;
+    int ret_val;
 
     /* Local variables */
-    integer i;
+    int i;
 
     ret_val = TRUE_;
 /* 						!ASSUME WINS. */
@@ -167,15 +167,15 @@ L10:
 
 /* DECLARATIONS */
 
-logical cyclop_(arg)
-integer arg;
+int cyclop_(arg)
+int arg;
 {
     /* System generated locals */
-    integer i__1, i__2;
-    logical ret_val;
+    int i__1, i__2;
+    int ret_val;
 
     /* Local variables */
-    integer i;
+    int i;
 
     ret_val = TRUE_;
 /* 						!ASSUME WINS. */
@@ -306,15 +306,15 @@ L500:
 
 /* DECLARATIONS */
 
-logical thiefp_(arg)
-integer arg;
+int thiefp_(arg)
+int arg;
 {
     /* System generated locals */
-    integer i__1;
-    logical ret_val;
+    int i__1;
+    int ret_val;
 
     /* Local variables */
-    integer i, j;
+    int i, j;
 
     ret_val = TRUE_;
 /* 						!ASSUME WINS. */

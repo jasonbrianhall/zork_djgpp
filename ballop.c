@@ -7,11 +7,11 @@
 #include "funcs.h"
 #include "vars.h"
 
-logical ballop_(arg)
-integer arg;
+int ballop_(arg)
+int arg;
 {
     /* System generated locals */
-    logical ret_val;
+    int ret_val;
 
     ret_val = TRUE_;
 /* 						!ASSUME WINS. */

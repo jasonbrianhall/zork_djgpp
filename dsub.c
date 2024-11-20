@@ -14,7 +14,7 @@
 
 extern FILE *dbfile;
 
-static void rspsb2nl_ P((integer, integer, integer, logical));
+static void rspsb2nl_ P((int, int, int, int));
 
 /* RSPEAK-- OUTPUT RANDOM MESSAGE ROUTINE */
 
@@ -23,7 +23,7 @@ static void rspsb2nl_ P((integer, integer, integer, logical));
 /* 	CALL RSPEAK(MSGNUM) */
 
 void rspeak_(n)
-integer n;
+int n;
 {
     rspsb2nl_(n, 0, 0, 1);
 } /* rspeak_ */
@@ -35,8 +35,8 @@ integer n;
 /* 	CALL RSPSUB(MSGNUM,SUBNUM) */
 
 void rspsub_(n, s1)
-integer n;
-integer s1;
+int n;
+int s1;
 {
     rspsb2nl_(n, s1, 0, 1);
 } /* rspsub_ */
@@ -48,9 +48,9 @@ integer s1;
 /* 	CALL RSPSB2(MSGNUM,SUBNUM1,SUBNUM2) */
 
 void rspsb2_(n, s1, s2)
-integer n;
-integer s1;
-integer s2;
+int n;
+int s1;
+int s2;
 {
     rspsb2nl_(n, s1, s2, 1);
 } /* rspsb2_ */
@@ -58,10 +58,10 @@ integer s2;
 /* rspsb2nl_ Display a substitutable message with an optional newline */
 
 static void rspsb2nl_(n, y, z, nl)
-integer n;
-integer y;
-integer z;
-logical nl;
+int n;
+int y;
+int z;
+int nl;
 {
     const char *zkey = "IanLanceTaylorJr";
     long x;
@@ -89,7 +89,7 @@ logical nl;
 	more_output(NULL);
 
     while (1) {
-	integer i;
+	int i;
 
 	i = getc(dbfile);
 	if (i == EOF) {
@@ -129,10 +129,10 @@ logical nl;
 
 /* DECLARATIONS */
 
-logical objact_()
+int objact_()
 {
     /* System generated locals */
-    logical ret_val;
+    int ret_val;
 
     ret_val = TRUE_;
 /* 						!ASSUME WINS. */
@@ -168,8 +168,8 @@ L200:
 /* 	CALL BUG(NO,PAR) */
 
 void bug_(a, b)
-integer a;
-integer b;
+int a;
+int b;
 {
     /* Local variables */
 
@@ -190,11 +190,11 @@ integer b;
 /* 	CALL NEWSTA(OBJECT,STRING,NEWROOM,NEWCON,NEWADV) */
 
 void newsta_(o, r, rm, cn, ad)
-integer o;
-integer r;
-integer rm;
-integer cn;
-integer ad;
+int o;
+int r;
+int rm;
+int cn;
+int ad;
 {
     rspeak_(r);
     objcts_1.oroom[o - 1] = rm;
@@ -206,16 +206,16 @@ integer ad;
 
 /* DECLARATIONS */
 
-logical qhere_(obj, rm)
-integer obj;
-integer rm;
+int qhere_(obj, rm)
+int obj;
+int rm;
 {
     /* System generated locals */
-    integer i__1;
-    logical ret_val;
+    int i__1;
+    int ret_val;
 
     /* Local variables */
-    integer i;
+    int i;
 
     ret_val = TRUE_;
     if (objcts_1.oroom[obj - 1] == rm) {
@@ -240,15 +240,15 @@ integer rm;
 
 /* DECLARATIONS */
 
-logical qempty_(obj)
-integer obj;
+int qempty_(obj)
+int obj;
 {
     /* System generated locals */
-    integer i__1;
-    logical ret_val;
+    int i__1;
+    int ret_val;
 
     /* Local variables */
-    integer i;
+    int i;
 
     ret_val = FALSE_;
 /* 						!ASSUME LOSE. */
@@ -269,19 +269,19 @@ integer obj;
 /* DECLARATIONS */
 
 void jigsup_(desc)
-integer desc;
+int desc;
 {
     /* Initialized data */
 
-    static const integer rlist[9] = { 8,6,36,35,34,4,34,6,5 };
+    static const int rlist[9] = { 8,6,36,35,34,4,34,6,5 };
 
     /* System generated locals */
-    integer i__1;
+    int i__1;
 
     /* Local variables */
-    integer nonofl;
-    logical f;
-    integer i, j;
+    int nonofl;
+    int f;
+    int i, j;
 
     rspeak_(desc);
 /* 						!DESCRIBE SAD STATE. */
@@ -436,14 +436,14 @@ L1100:
 
 /* DECLARATIONS */
 
-integer oactor_(obj)
-integer obj;
+int oactor_(obj)
+int obj;
 {
     /* System generated locals */
-    integer ret_val = 1, i__1;
+    int ret_val = 1, i__1;
 
     /* Local variables */
-    integer i;
+    int i;
 
     i__1 = advs_1.alnt;
     for (i = 1; i <= i__1; ++i) {
@@ -465,15 +465,15 @@ integer obj;
 
 /* DECLARATIONS */
 
-logical prob_(g, b)
-integer g;
-integer b;
+int prob_(g, b)
+int g;
+int b;
 {
     /* System generated locals */
-    logical ret_val;
+    int ret_val;
 
     /* Local variables */
-    integer i;
+    int i;
 
     i = g;
 /* 						!ASSUME GOOD LUCK. */
@@ -491,14 +491,14 @@ integer b;
 /* RMDESC PRINTS A DESCRIPTION OF THE CURRENT ROOM. */
 /* IT IS ALSO THE PROCESSOR FOR VERBS 'LOOK' AND 'EXAMINE'. */
 
-logical rmdesc_(full)
-integer full;
+int rmdesc_(full)
+int full;
 {
     /* System generated locals */
-    logical ret_val, L__1;
+    int ret_val, L__1;
 
     /* Local variables */
-    integer i, ra;
+    int i, ra;
 
 /* FULL=	0/1/2/3=	SHORT/OBJ/ROOM/FULL */
 
@@ -603,15 +603,15 @@ L600:
 
 /* DECLARATIONS */
 
-logical rappli_(ri)
-integer ri;
+int rappli_(ri)
+int ri;
 {
     /* Initialized data */
 
-    const integer newrms = 38;
+    const int newrms = 38;
 
     /* System generated locals */
-    logical ret_val;
+    int ret_val;
 
 
     ret_val = TRUE_;

@@ -7,23 +7,23 @@
 #include "funcs.h"
 #include "vars.h"
 
-static void litint_ P((integer, integer *, integer, const integer *,
-		       integer));
+static void litint_ P((int, int *, int, const int *,
+		       int));
 
 void cevapp_(ri)
-integer ri;
+int ri;
 {
     /* Initialized data */
 
-    static const integer cndtck[10] = { 50,20,10,5,0,156,156,156,157,0 };
-    static const integer lmptck[12] = { 50,30,20,10,4,0,154,154,154,154,155,0 };
+    static const int cndtck[10] = { 50,20,10,5,0,156,156,156,157,0 };
+    static const int lmptck[12] = { 50,30,20,10,4,0,154,154,154,154,155,0 };
 
     /* System generated locals */
-    integer i__1, i__2;
+    int i__1, i__2;
 
     /* Local variables */
-    logical f;
-    integer i, j, bc, br;
+    int f;
+    int i, j, bc, br;
 
     if (ri == 0) {
 	return;
@@ -764,11 +764,11 @@ L24100:
 /* DECLARATIONS */
 
 static void litint_(obj, ctr, cev, ticks, tickln)
-integer obj;
-integer *ctr;
-integer cev;
-const integer *ticks;
-integer tickln;
+int obj;
+int *ctr;
+int cev;
+const int *ticks;
+int tickln;
 {
     /* Parameter adjustments */
     --ticks;

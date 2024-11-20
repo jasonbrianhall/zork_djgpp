@@ -7,17 +7,17 @@
 #include "funcs.h"
 #include "vars.h"
 
-logical rappl1_(ri)
-integer ri;
+int rappl1_(ri)
+int ri;
 {
     /* System generated locals */
-    integer i__1, i__2;
-    logical ret_val;
+    int i__1, i__2;
+    int ret_val;
 
     /* Local variables */
-    logical f;
-    integer i;
-    integer j;
+    int f;
+    int i;
+    int j;
 
     ret_val = TRUE_;
 /* 						!USUALLY IGNORED. */

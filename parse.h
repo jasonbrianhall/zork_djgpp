@@ -12,21 +12,21 @@
 #endif
 
 EXTERN struct {
-    integer act, o1, o2, p1, p2;
+    int act, o1, o2, p1, p2;
 } pv_;
 
 #define pv_1 pv_
-#define pvec ((integer *)&pv_1)
-#define objvec ((integer *)&pv_1 + 1)
-#define prpvec ((integer *)&pv_1 + 3)
+#define pvec ((int *)&pv_1)
+#define objvec ((int *)&pv_1 + 1)
+#define prpvec ((int *)&pv_1 + 3)
 
 EXTERN struct {
-    integer vflag, dobj, dfl1, dfl2, dfw1, dfw2, iobj, ifl1, ifl2, ifw1, ifw2;
+    int vflag, dobj, dfl1, dfl2, dfw1, dfw2, iobj, ifl1, ifl2, ifw1, ifw2;
 
 } syntax_;
 
 #define syntax_1 syntax_
-#define syn ((integer *)&syntax_1)
+#define syn ((int *)&syntax_1)
 
 /* Object flags (objflg) */
 
@@ -55,7 +55,7 @@ EXTERN struct {
 /* &		2RAN,0,3RTHE,0,3RRUN,0,2RGO,0,3RPRO,3RCEE,0,0/ */
 
 EXTERN const struct {
-    integer bvoc[20];
+    int bvoc[20];
 } buzvoc_
 #ifdef INIT
 	= { 2164, 0, 4200, 0, 15160, 0, 1600, 0, 2160, 0, 32325, 0, 
@@ -75,7 +75,7 @@ EXTERN const struct {
 /* &		3ROFF,0,11/ */
 
 EXTERN const struct {
-    integer pvoc[45];
+    int pvoc[45];
 } prpvoc_
 #ifdef INIT
 	= { 24885, 28800, 1, 37180, 12800, 2, 34369, 22680, 2, 32338, 
@@ -103,7 +103,7 @@ EXTERN const struct {
 /* &	 3RCRO,2RSS,"36000/ */
 
 EXTERN const struct {
-    integer dvoc[75];
+    int dvoc[75];
 } dirvoc_
 #ifdef INIT
 	= { 22400, 0, 1024, 23018, 32320, 1024, 30400, 0, 5120, 8000, 0,
@@ -178,7 +178,7 @@ EXTERN const struct {
 /* &	 3RSOU,3RTHE,206,3REAS,1RT,207,3REAS,3RTER,207, */
 /* &	 3RWES,1RT,208,3RWES,3RTER,208,3RDUN,3RGEO,215/ */
 
-EXTERN const integer avoc[]
+EXTERN const int avoc[]
 #ifdef INIT
 	= { 3935, 37360, 1, 81, 8495, 22681, 1, 13420, 0, 3, 25816, 
 	    25818, 3, 35580, 29015, 4, 16044, 8000, 6, 13647, 8000, 8, 8575, 
@@ -388,7 +388,7 @@ EXTERN const integer avoc[]
 /* &	 3RWAV,1RE,3RFLA,3RUNT,3RBRA,3RNDI,4,"40154,"40000,-1,-1, */
 /* &	 3RWIN,1RD,5,"50233,"40233,"61007,-1,-1/ */
 
-EXTERN const integer vvoc[]
+EXTERN const int vvoc[]
 #ifdef INIT
 	= { 3929, 8240, 1, 70, 35418, 3819, 1, 71, 31256, 8722, 1, 72, 
 	    31201, 40000, 1, 73, 35418, 30775, 1, 74, 31329, 20800, 3260, 
@@ -597,7 +597,7 @@ EXTERN const integer vvoc[]
 /* &	 3RSTR,3RUCT,212,3RCHA,3RNNE,214, */
 /* &	 3RKEE,3RPER,215,3RLAD,3RDER,216/ */
 
-EXTERN const integer ovoc[]
+EXTERN const int ovoc[]
 #ifdef INIT
 	= { 3247, 0, 1, 25, 100, 30443, 17600, 1, 11258, 19563, 2, 5295,
 	    35400, 2, 10215, 6400, 3, 30454, 7329, 3, 20054, 5120, 3, 6774, 

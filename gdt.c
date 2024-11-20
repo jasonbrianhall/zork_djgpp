@@ -16,19 +16,19 @@ void gdt_()
 {
     /* Initialized data */
 
-    const integer cmdmax = 38;
+    const int cmdmax = 38;
     const char *dbgcmd =
 	    "DRDODADCDXDHDLDVDFDSAFHENRNTNCNDRRRTRCRDTKEXARAOAAACAXAVD2DNANDMDTAHDPPDDZAZ";
-    static const integer argtyp[38] = { 2,2,2,2,2,0,0,2,2,0,1,0,0,0,0,0,0,
+    static const int argtyp[38] = { 2,2,2,2,2,0,0,2,2,0,1,0,0,0,0,0,0,
 	    0,0,0,1,0,3,3,3,3,1,3,2,2,1,2,1,0,0,0,0,1 };
 
     /* System generated locals */
-    integer i__1, i__2;
+    int i__1, i__2;
 
     /* Local variables */
-    integer i, j, k, l, l1;
+    int i, j, k, l, l1;
     char cmd[3];
-    integer fmax, smax;
+    int fmax, smax;
     char buf[80];
     char *z;
 

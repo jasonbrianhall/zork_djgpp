@@ -8,9 +8,9 @@
 /* GTTIME-- GET TOTAL TIME PLAYED */
 
 void gttime_(t)
-integer *t;
+int *t;
 {
-    integer h, m, s;
+    int h, m, s;
 
     itime_(&h, &m, &s);
     *t = h * 60 + m - (time_1.shour * 60 + time_1.smin);
@@ -25,14 +25,14 @@ integer *t;
 
 /* DECLARATIONS */
 
-logical opncls_(obj, so, sc)
-integer obj;
-integer so;
-integer sc;
+int opncls_(obj, so, sc)
+int obj;
+int so;
+int sc;
 {
     /* System generated locals */
-    integer i__1;
-    logical ret_val;
+    int i__1;
+    int ret_val;
 
     ret_val = TRUE_;
 /* 						!ASSUME WINS. */
@@ -77,15 +77,15 @@ L200:
 
 /* DECLARATIONS */
 
-logical lit_(rm)
-integer rm;
+int lit_(rm)
+int rm;
 {
     /* System generated locals */
-    integer i__1, i__2;
-    logical ret_val;
+    int i__1, i__2;
+    int ret_val;
 
     /* Local variables */
-    integer i, j, oa;
+    int i, j, oa;
 
     ret_val = TRUE_;
 /* 						!ASSUME WINS */
@@ -144,16 +144,16 @@ L1000:
 
 /* DECLARATIONS */
 
-integer weight_(rm, cn, ad)
-integer rm;
-integer cn;
-integer ad;
+int weight_(rm, cn, ad)
+int rm;
+int cn;
+int ad;
 {
     /* System generated locals */
-    integer ret_val, i__1;
+    int ret_val, i__1;
 
     /* Local variables */
-    integer i, j;
+    int i, j;
 
     ret_val = 0;
     i__1 = objcts_1.olnt;

@@ -12,14 +12,14 @@
 
 extern int strcmp P((const char *, const char *));
 
-static logical xvehic_ P((integer));
-static void xendmv_ P((logical));
+static int xvehic_ P((int));
+static void xendmv_ P((int));
 
 void game_()
 {
     /* Local variables */
-    logical f;
-    integer i;
+    int f;
+    int i;
 
 /* START UP, DESCRIBE CURRENT LOCATION. */
 
@@ -206,10 +206,10 @@ L2900:
 /* DECLARATIONS */
 
 static void xendmv_(flag)
-logical flag;
+int flag;
 {
     /* Local variables */
-    logical f;
+    int f;
 
     if (! (flag)) {
 	rspeak_(341);
@@ -241,14 +241,14 @@ logical flag;
 
 /* DECLARATIONS */
 
-static logical xvehic_(n)
-integer n;
+static int xvehic_(n)
+int n;
 {
     /* System generated locals */
-    logical ret_val;
+    int ret_val;
 
     /* Local variables */
-    integer av;
+    int av;
 
     ret_val = FALSE_;
 /* 						!ASSUME LOSES. */

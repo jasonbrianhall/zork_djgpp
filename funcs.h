@@ -34,9 +34,6 @@
 #endif /* ! __STDC__ */
 #endif /* ! unix */
 
-typedef int integer;
-typedef int logical;
-
 #define TRUE_ (1)
 #define FALSE_ (0)
 
@@ -44,7 +41,7 @@ typedef int logical;
 #define min(a,b) ((a) <= (b) ? (a) : (b))
 #define max(a,b) ((a) >= (b) ? (a) : (b))
 
-extern logical
+extern int
 	protected P((void)),
 	wizard P((void));
 
@@ -54,82 +51,82 @@ extern void
 	more_input P((void));
 
 extern void
-	bug_ P((integer, integer)),
-	cevapp_ P((integer)),
-	cpgoto_ P((integer)),
-	cpinfo_ P((integer, integer)),
+	bug_ P((int, int)),
+	cevapp_ P((int)),
+	cpgoto_ P((int)),
+	cpinfo_ P((int, int)),
 	encryp_ P((const char *, char *)),
 	exit_ P((void)),
 	fightd_ P((void)),
 	game_ P((void)),
 	gdt_ P((void)),
-	gttime_ P((integer *)),
-	invent_ P((integer)),
-	itime_ P((integer *, integer *, integer *)), 
-	jigsup_ P((integer)),
-	newsta_ P((integer, integer, integer, integer, integer)),
-	orphan_ P((integer, integer, integer, integer, integer)),
-	princo_ P((integer, integer)),
-	princr_ P((logical, integer)),
-	rdline_ P((char *, integer)),
-	rspeak_ P((integer)),
-	rspsb2_ P((integer, integer, integer)),
-	rspsub_ P((integer, integer)),
+	gttime_ P((int *)),
+	invent_ P((int)),
+	itime_ P((int *, int *, int *)), 
+	jigsup_ P((int)),
+	newsta_ P((int, int, int, int, int)),
+	orphan_ P((int, int, int, int, int)),
+	princo_ P((int, int)),
+	princr_ P((int, int)),
+	rdline_ P((char *, int)),
+	rspeak_ P((int)),
+	rspsb2_ P((int, int, int)),
+	rspsub_ P((int, int)),
 	rstrgm_ P((void)),
 	savegm_ P((void)),
-	score_ P((logical)),
-	scrupd_ P((integer)),
+	score_ P((int)),
+	scrupd_ P((int)),
 	swordd_ P((void)),
 	thiefd_ P((void)),
-	valuac_ P((integer));
-extern integer
-	blow_ P((integer, integer, integer, logical, integer)),
-	fights_ P((integer, logical)),
-	fwim_ P((integer, integer, integer, integer, integer, logical)),
-	getobj_ P((integer, integer, integer)),
-	schlst_ P((integer, integer, integer, integer,  integer, integer)),
-	mrhere_ P((integer)),
-	oactor_ P((integer)),
-	rnd_ P((integer)),
-	robadv_ P((integer, integer, integer, integer)), 
-	robrm_ P((integer, integer, integer, integer, integer)),
-	sparse_ P((const integer *, integer, logical)),
-	vilstr_ P((integer)),
-	weight_ P((integer, integer, integer));
-extern logical
-	aappli_ P((integer)),
-	ballop_ P((integer)),
+	valuac_ P((int));
+extern int
+	blow_ P((int, int, int, int, int)),
+	fights_ P((int, int)),
+	fwim_ P((int, int, int, int, int, int)),
+	getobj_ P((int, int, int)),
+	schlst_ P((int, int, int, int,  int, int)),
+	mrhere_ P((int)),
+	oactor_ P((int)),
+	rnd_ P((int)),
+	robadv_ P((int, int, int, int)), 
+	robrm_ P((int, int, int, int, int)),
+	sparse_ P((const int *, int, int)),
+	vilstr_ P((int)),
+	weight_ P((int, int, int));
+extern int
+	aappli_ P((int)),
+	ballop_ P((int)),
 	clockd_ P((void)),
-	cyclop_ P((integer)),
-	drop_ P((logical)),
-	findxt_ P((integer, integer)),
-	ghere_ P((integer, integer)),
+	cyclop_ P((int)),
+	drop_ P((int)),
+	findxt_ P((int, int)),
+	ghere_ P((int, int)),
 	init_ P((void)),
-	lightp_ P((integer)),
-	lit_ P((integer)),
-	moveto_ P((integer, integer)),
-	nobjs_ P((integer, integer)),
-	oappli_ P((integer, integer)),
+	lightp_ P((int)),
+	lit_ P((int)),
+	moveto_ P((int, int)),
+	nobjs_ P((int, int)),
+	oappli_ P((int, int)),
 	objact_ P((void)),
-	opncls_ P((integer, integer, integer)),
-	parse_ P((char *, logical)),
-	prob_ P((integer, integer)),
-	put_ P((logical)),
-	rappli_ P((integer)),
-	rappl1_ P((integer)),
-	rappl2_ P((integer)),
-	rmdesc_ P((integer)),
-	sobjs_ P((integer, integer)),
-	sverbs_ P((integer)),
+	opncls_ P((int, int, int)),
+	parse_ P((char *, int)),
+	prob_ P((int, int)),
+	put_ P((int)),
+	rappli_ P((int)),
+	rappl1_ P((int)),
+	rappl2_ P((int)),
+	rmdesc_ P((int)),
+	sobjs_ P((int, int)),
+	sverbs_ P((int)),
 	synmch_ P((void)),
-	take_ P((logical)),
-	thiefp_ P((integer)),
-	trollp_ P((integer)),
-	qempty_ P((integer)),
-	qhere_ P((integer, integer)),
-	vappli_ P((integer)),
+	take_ P((int)),
+	thiefp_ P((int)),
+	trollp_ P((int)),
+	qempty_ P((int)),
+	qhere_ P((int, int)),
+	vappli_ P((int)),
 	walk_ P((void)),
-	winnin_ P((integer, integer)),
-	yesno_ P((integer, integer, integer));
+	winnin_ P((int, int)),
+	yesno_ P((int, int, int));
 
 #endif

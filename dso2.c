@@ -8,18 +8,18 @@
 #include "funcs.h"
 #include "vars.h"
 
-logical moveto_(nr, who)
-integer nr;
-integer who;
+int moveto_(nr, who)
+int nr;
+int who;
 {
     /* System generated locals */
-    logical ret_val;
+    int ret_val;
 
     /* Local variables */
-    integer j;
-    logical lhr;
-    logical lnr, nlv;
-    integer bits;
+    int j;
+    int lhr;
+    int lnr, nlv;
+    int bits;
 
     ret_val = FALSE_;
 /* 						!ASSUME FAILS. */
@@ -95,18 +95,18 @@ L800:
 /* DECLARATIONS */
 
 void score_(flg)
-logical flg;
+int flg;
 {
     /* Initialized data */
 
-    static const integer rank[10] = { 20,19,18,16,12,8,4,2,1,0 };
-    static const integer erank[5] = { 20,15,10,5,0 };
+    static const int rank[10] = { 20,19,18,16,12,8,4,2,1,0 };
+    static const int erank[5] = { 20,15,10,5,0 };
 
     /* System generated locals */
-    integer i__1;
+    int i__1;
 
     /* Local variables */
-    integer i, as;
+    int i, as;
 
     as = advs_1.ascore[play_1.winner - 1];
 
@@ -163,7 +163,7 @@ L80:
 /* DECLARATIONS */
 
 void scrupd_(n)
-integer n;
+int n;
 {
     if (findex_1.endgmf) {
 	goto L100;

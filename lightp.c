@@ -7,15 +7,15 @@
 #include "funcs.h"
 #include "vars.h"
 
-logical lightp_(obj)
-integer obj;
+int lightp_(obj)
+int obj;
 {
     /* System generated locals */
-    logical ret_val;
+    int ret_val;
 
     /* Local variables */
-    integer flobts;
-    integer i;
+    int flobts;
+    int i;
 
     ret_val = TRUE_;
 /* 						!ASSUME WINS */

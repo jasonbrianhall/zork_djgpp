@@ -7,23 +7,23 @@
 #include "funcs.h"
 #include "vars.h"
 
-static logical infest_ P((integer));
+static int infest_ P((int));
 
 void fightd_()
 {
     /* Initialized data */
 
-    const integer rout = 1;
+    const int rout = 1;
 
     /* System generated locals */
-    integer i__1, i__2;
+    int i__1, i__2;
 
     /* Local variables */
-    logical f;
-    integer i, j, ra;
-    integer obj;
-    integer res;
-    integer out;
+    int f;
+    int i, j, ra;
+    int obj;
+    int res;
+    int out;
 
     i__1 = vill_1.vlnt;
     for (i = 1; i <= i__1; ++i) {
@@ -175,43 +175,43 @@ L2700:
 
 /* DECLARATIONS */
 
-integer blow_(h, v, rmk, hflg, out)
-integer h;
-integer v;
-integer rmk;
-logical hflg;
-integer out;
+int blow_(h, v, rmk, hflg, out)
+int h;
+int v;
+int rmk;
+int hflg;
+int out;
 {
     /* Initialized data */
 
-    const integer rmiss = 0;
-    const integer rout = 1;
-    const integer rkill = 2;
-    const integer rstag = 5;
-    const integer rlose = 6;
-    const integer rhes = 7;
-    const integer rsit = 8;
-    static const integer def1r[3] = { 1,2,3 };
-    static const integer def2r[4] = { 13,23,24,25 };
-    static const integer def3r[5] = { 35,36,46,47,57 };
-    static const integer rvectr[66] = { 0,0,0,0,5,5,1,1,2,2,2,2,0,0,0,0,0,5,
+    const int rmiss = 0;
+    const int rout = 1;
+    const int rkill = 2;
+    const int rstag = 5;
+    const int rlose = 6;
+    const int rhes = 7;
+    const int rsit = 8;
+    static const int def1r[3] = { 1,2,3 };
+    static const int def2r[4] = { 13,23,24,25 };
+    static const int def3r[5] = { 35,36,46,47,57 };
+    static const int rvectr[66] = { 0,0,0,0,5,5,1,1,2,2,2,2,0,0,0,0,0,5,
 	    5,3,3,1,0,0,0,5,5,3,3,3,1,2,2,2,0,0,0,0,0,5,5,3,3,4,4,0,0,0,5,5,
 	    3,3,3,4,4,4,0,5,5,3,3,3,3,4,4,4 };
-    static const integer rstate[45] = { 5000,3005,3008,4011,3015,3018,1021,
+    static const int rstate[45] = { 5000,3005,3008,4011,3015,3018,1021,
 	    0,0,5022,3027,3030,4033,3037,3040,1043,0,0,4044,2048,4050,4054,
 	    5058,4063,4067,3071,1074,4075,1079,4080,4084,4088,4092,4096,4100,
 	    1104,4105,2109,4111,4115,4119,4123,4127,3131,3134 };
 
     /* System generated locals */
-    integer ret_val, i__1, i__2;
+    int ret_val, i__1, i__2;
 
     /* Local variables */
-    logical f;
-    integer i, j, oa, ra, od, mi, dv, def;
-    integer tbl;
-    integer att, res;
-    integer dweap;
-    integer pblose;
+    int f;
+    int i, j, oa, ra, od, mi, dv, def;
+    int tbl;
+    int att, res;
+    int dweap;
+    int pblose;
 
     ra = objcts_1.oactio[v - 1];
 /* 						!GET VILLAIN ACTION, */
@@ -518,10 +518,10 @@ L4600:
 void swordd_()
 {
     /* System generated locals */
-    integer i__1, i__2;
+    int i__1, i__2;
 
     /* Local variables */
-    integer i, ng;
+    int i, ng;
 
     if (objcts_1.oadv[oindex_1.sword - 1] != aindex_1.player) {
 	goto L500;
@@ -581,11 +581,11 @@ L500:
 /* INFEST-	SUBROUTINE TO TEST FOR INFESTED ROOM */
 
 /* DECLARATIONS */
-static logical infest_(r)
-integer r;
+static int infest_(r)
+int r;
 {
     /* System generated locals */
-    logical ret_val;
+    int ret_val;
 
     if (! findex_1.endgmf) {
 	ret_val = objcts_1.oroom[oindex_1.cyclo - 1] == r || objcts_1.oroom[

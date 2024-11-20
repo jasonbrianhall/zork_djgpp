@@ -22,7 +22,7 @@
 #endif /* ! BSD4_2 */
 #endif /* NONBUSINESS */
 
-logical protected()
+int protected()
 {
 #ifndef NONBUSINESS
 
@@ -63,7 +63,7 @@ logical protected()
 #define WIZARDID (0)
 #endif
 
-logical wizard()
+int wizard()
 {
 #ifdef __AMOS__
     if (jobidx()->jobusr == 0x102)

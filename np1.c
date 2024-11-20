@@ -15,25 +15,25 @@
 
 /* THIS ROUTINE DETAILS ON BIT 2 OF PRSFLG */
 
-integer sparse_(lbuf, llnt, vbflag)
-const integer *lbuf;
-integer llnt;
-logical vbflag;
+int sparse_(lbuf, llnt, vbflag)
+const int *lbuf;
+int llnt;
+int vbflag;
 {
     /* Initialized data */
 
 /* 	DATA R50MIN/1RA/,R50WAL/3RWAL/ */
-    const integer r50min = 1600;
-    const integer r50wal = 36852;
+    const int r50min = 1600;
+    const int r50wal = 36852;
 
     /* System generated locals */
-    volatile integer ret_val, i__1, i__2;
+    volatile int ret_val, i__1, i__2;
 
     /* Local variables */
-    integer i, j, adj;
-    integer obj;
-    integer prep, pptr, lbuf1, lbuf2;
-    integer buzlnt, prplnt, dirlnt;
+    int i, j, adj;
+    int obj;
+    int prep, pptr, lbuf1, lbuf2;
+    int buzlnt, prplnt, dirlnt;
 
     /* Parameter adjustments */
     --lbuf;

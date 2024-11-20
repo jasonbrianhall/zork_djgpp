@@ -9,16 +9,16 @@
 
 /* TAKE AN OBJECT (FOR VERBS TAKE, PUT, DROP, READ, ETC.) */
 
-logical take_(flg)
-logical flg;
+int take_(flg)
+int flg;
 {
     /* System generated locals */
-    integer i__1;
-    logical ret_val;
+    int i__1;
+    int ret_val;
 
     /* Local variables */
-    integer oa;
-    integer x;
+    int oa;
+    int x;
 
     ret_val = FALSE_;
 /* 						!ASSUME LOSES. */
@@ -101,15 +101,15 @@ L700:
 
 /* DECLARATIONS */
 
-logical drop_(z)
-logical z;
+int drop_(z)
+int z;
 {
     /* System generated locals */
-    logical ret_val;
+    int ret_val;
 
     /* Local variables */
-    logical f;
-    integer i, x;
+    int f;
+    int i, x;
 
     ret_val = TRUE_;
 /* 						!ASSUME WINS. */
@@ -190,15 +190,15 @@ L1000:
 
 /* DECLARATIONS */
 
-logical put_(flg)
-logical flg;
+int put_(flg)
+int flg;
 {
     /* System generated locals */
-    logical ret_val;
+    int ret_val;
 
     /* Local variables */
-    integer j;
-    integer svi, svo;
+    int j;
+    int svi, svo;
 
     ret_val = FALSE_;
     if (prsvec_1.prso <= star_1.strbit && prsvec_1.prsi <= star_1.strbit) {
@@ -332,16 +332,16 @@ L1000:
 /* VALUAC- HANDLES VALUABLES/EVERYTHING */
 
 void valuac_(v)
-integer v;
+int v;
 {
     /* System generated locals */
-    integer i__1;
+    int i__1;
 
     /* Local variables */
-    logical f;
-    integer i;
-    logical f1;
-    integer savep, saveh;
+    int f;
+    int i;
+    int f1;
+    int savep, saveh;
 
     f = TRUE_;
 /* 						!ASSUME NO ACTIONS. */

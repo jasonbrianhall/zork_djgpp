@@ -39,9 +39,9 @@ void exit_()
 /* Get time in hours, minutes and seconds */
 
 void itime_(hrptr, minptr, secptr)
-integer *hrptr;
-integer *minptr;
-integer *secptr;
+int *hrptr;
+int *minptr;
+int *secptr;
 {
 	time_t timebuf;
 	struct tm *tmptr;
@@ -55,8 +55,8 @@ integer *secptr;
 }
 /* Random number generator */
 
-integer rnd_(maxval)
-integer maxval;
+int rnd_(maxval)
+int maxval;
 {
 	return rand() % maxval;
 }
@@ -135,8 +135,8 @@ extern void setupterm P((const char *, int, int));
  * terminal has).
  */
 
-static integer crows;
-static integer coutput;
+static int crows;
+static int coutput;
 
 void more_init()
 {

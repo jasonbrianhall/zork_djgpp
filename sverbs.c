@@ -10,35 +10,35 @@
 #include "funcs.h"
 #include "vars.h"
 
-logical sverbs_(ri)
-integer ri;
+int sverbs_(ri)
+int ri;
 {
     /* Initialized data */
 
-    const integer mxnop = 39;
-    const integer mxjoke = 64;
-    static const integer jokes[25] = { 4,5,3,304,305,306,307,308,309,310,311,
+    const int mxnop = 39;
+    const int mxjoke = 64;
+    static const int jokes[25] = { 4,5,3,304,305,306,307,308,309,310,311,
 	    312,313,5314,5319,324,325,883,884,120,120,0,0,0,0 };
-    static const integer answer[14] = { 0,1,2,3,4,4,4,4,5,5,5,6,7,7};
+    static const int answer[14] = { 0,1,2,3,4,4,4,4,5,5,5,6,7,7};
     static const char * const ansstr[14] =
 	    { "TEMPLE", "FOREST", "30003", "FLASK", "RUB", "FONDLE",
 	      "CARRES", "TOUCH", "BONES", "BODY", "SKELE", "RUSTYKNIFE",
 	      "NONE", "NOWHER" };
 
     /* System generated locals */
-    integer i__1, i__2;
-    logical ret_val;
+    int i__1, i__2;
+    int ret_val;
 
     /* Local variables */
-    logical f;
+    int f;
     const char *z, *z2;
-    integer i, j;
-    integer k;
-    integer l;
+    int i, j;
+    int k;
+    int l;
     char ch[1*6];
-    integer cp, wp;
+    int cp, wp;
     char pp1[1*6], pp2[1*6];
-    integer odi2 = 0, odo2 = 0;
+    int odi2 = 0, odo2 = 0;
 
     ret_val = TRUE_;
 /* 						!ASSUME WINS. */

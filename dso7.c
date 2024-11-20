@@ -16,9 +16,9 @@ char *outw;
 
     const char *keyw = "ECORMS";
 
-    integer i, j, uinw[6], usum;
+    int i, j, uinw[6], usum;
     char ukeyw[1*6];
-    integer uinws, ukeyws;
+    int uinws, ukeyws;
 
     /* Parameter adjustments */
     --outw;
@@ -63,13 +63,13 @@ char *outw;
 /* DECLARATIONS */
 
 void cpgoto_(st)
-integer st;
+int st;
 {
     /* System generated locals */
-    integer i__1, i__2;
+    int i__1, i__2;
 
     /* Local variables */
-    integer i;
+    int i;
 
     rooms_1.rflag[rindex_1.cpuzz - 1] &= ~ RSEEN;
     i__1 = objcts_1.olnt;
@@ -93,16 +93,16 @@ integer st;
 /* DECLARATIONS */
 
 void cpinfo_(rmk, st)
-integer rmk;
-integer st;
+int rmk;
+int st;
 {
     /* Initialized data */
 
-    static const integer dgmoft[8] = { -9,-8,-7,-1,1,7,8,9 };
+    static const int dgmoft[8] = { -9,-8,-7,-1,1,7,8,9 };
     const char *pict = "SSS M";
 
     /* Local variables */
-    integer i, j, k, l;
+    int i, j, k, l;
     char dgm[1*8];
 
     rspeak_(rmk);

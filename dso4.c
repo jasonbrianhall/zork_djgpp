@@ -7,17 +7,17 @@
 #include "funcs.h"
 #include "vars.h"
 
-integer robadv_(adv, nr, nc, na)
-integer adv;
-integer nr;
-integer nc;
-integer na;
+int robadv_(adv, nr, nc, na)
+int adv;
+int nr;
+int nc;
+int na;
 {
     /* System generated locals */
-    integer ret_val, i__1;
+    int ret_val, i__1;
 
     /* Local variables */
-    integer i;
+    int i;
 
     ret_val = 0;
 /* 						!COUNT OBJECTS */
@@ -40,18 +40,18 @@ L100:
 
 /* DECLARATIONS */
 
-integer robrm_(rm, pr, nr, nc, na)
-integer rm;
-integer pr;
-integer nr;
-integer nc;
-integer na;
+int robrm_(rm, pr, nr, nc, na)
+int rm;
+int pr;
+int nr;
+int nc;
+int na;
 {
     /* System generated locals */
-    integer ret_val, i__1, i__2;
+    int ret_val, i__1, i__2;
 
     /* Local variables */
-    integer i;
+    int i;
 
 
 /* OBJECTS */
@@ -91,15 +91,15 @@ L100:
 
 /* DECLARATIONS */
 
-logical winnin_(vl, hr)
-integer vl;
-integer hr;
+int winnin_(vl, hr)
+int vl;
+int hr;
 {
     /* System generated locals */
-    logical ret_val;
+    int ret_val;
 
     /* Local variables */
-    integer ps, vs;
+    int ps, vs;
 
 
 /* OBJECTS */
@@ -138,17 +138,17 @@ integer hr;
 
 /* DECLARATIONS */
 
-integer fights_(h, flg)
-integer h;
-logical flg;
+int fights_(h, flg)
+int h;
+int flg;
 {
     /* Initialized data */
 
-    const integer smin = 2;
-    const integer smax = 7;
+    const int smin = 2;
+    const int smax = 7;
 
     /* System generated locals */
-    integer ret_val;
+    int ret_val;
 
     ret_val = smin + ((smax - smin) * advs_1.ascore[h - 1] + state_1.mxscor /
 	     2) / state_1.mxscor;
@@ -162,14 +162,14 @@ logical flg;
 
 /* DECLARATIONS */
 
-integer vilstr_(v)
-integer v;
+int vilstr_(v)
+int v;
 {
     /* System generated locals */
-    integer ret_val, i__1, i__2, i__3;
+    int ret_val, i__1, i__2, i__3;
 
     /* Local variables */
-    integer i;
+    int i;
 
     ret_val = objcts_1.ocapac[v - 1];
     if (ret_val <= 0) {

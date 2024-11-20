@@ -8,14 +8,14 @@
 #include "vars.h"
 
 void princr_(full, rm)
-logical full;
-integer rm;
+int full;
+int rm;
 {
     /* System generated locals */
-    integer i__1, i__2;
+    int i__1, i__2;
 
     /* Local variables */
-    integer i, j, k;
+    int i, j, k;
 
     j = 329;
 /* 						!ASSUME SUPERBRIEF FORMAT. */
@@ -97,13 +97,13 @@ L1000:
 /* DECLARATIONS */
 
 void invent_(adv)
-integer adv;
+int adv;
 {
     /* System generated locals */
-    integer i__1;
+    int i__1;
 
     /* Local variables */
-    integer i, j;
+    int i, j;
 
     i = 575;
 /* 						!FIRST LINE. */
@@ -159,14 +159,14 @@ L100:
 /* DECLARATIONS */
 
 void princo_(obj, desc)
-integer obj;
-integer desc;
+int obj;
+int desc;
 {
     /* System generated locals */
-    integer i__1;
+    int i__1;
 
     /* Local variables */
-    integer i;
+    int i;
 
     rspsub_(desc, objcts_1.odesc2[obj - 1]);
 /* 						!PRINT HEADER. */
