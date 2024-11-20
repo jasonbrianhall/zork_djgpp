@@ -7,8 +7,7 @@
 #include "funcs.h"
 #include "vars.h"
 
-int aappli_(ri)
-int ri;
+int aappli_(int ri)
 {
     /* System generated locals */
     int ret_val;
