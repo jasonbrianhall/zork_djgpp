@@ -143,7 +143,7 @@ void orphan_(int o1, int o2, int o3, int o4, int o5)
 
 /* THIS ROUTINE DETAILS ON BIT 1 OF PRSFLAG */
 
-static int lex_(char *inbuf, char *outbuf, int *op, int vbflag)
+static int lex_(char *inbuf, int *outbuf, int *op, int vbflag)
 {
     /* Initialized data */
 
