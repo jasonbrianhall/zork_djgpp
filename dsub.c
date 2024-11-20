@@ -157,9 +157,7 @@ L200:
 
 /* 	CALL BUG(NO,PAR) */
 
-void bug_(a, b)
-int a;
-int b;
+void bug_(int a, int b)
 {
     /* Local variables */
 
@@ -179,12 +177,7 @@ int b;
 
 /* 	CALL NEWSTA(OBJECT,STRING,NEWROOM,NEWCON,NEWADV) */
 
-void newsta_(o, r, rm, cn, ad)
-int o;
-int r;
-int rm;
-int cn;
-int ad;
+void newsta_(int o, int r, int rm, int cn, int ad)
 {
     rspeak_(r);
     objcts_1.oroom[o - 1] = rm;
@@ -196,9 +189,7 @@ int ad;
 
 /* DECLARATIONS */
 
-int qhere_(obj, rm)
-int obj;
-int rm;
+int qhere_(int obj, int rm)
 {
     /* System generated locals */
     int i__1;
@@ -230,8 +221,7 @@ int rm;
 
 /* DECLARATIONS */
 
-int qempty_(obj)
-int obj;
+int qempty_(int obj)
 {
     /* System generated locals */
     int i__1;
@@ -258,8 +248,7 @@ int obj;
 
 /* DECLARATIONS */
 
-void jigsup_(desc)
-int desc;
+void jigsup_(int desc)
 {
     /* Initialized data */
 
@@ -426,8 +415,7 @@ L1100:
 
 /* DECLARATIONS */
 
-int oactor_(obj)
-int obj;
+int oactor_(int obj)
 {
     /* System generated locals */
     int ret_val = 1, i__1;
@@ -455,9 +443,7 @@ int obj;
 
 /* DECLARATIONS */
 
-int prob_(g, b)
-int g;
-int b;
+int prob_(int g, int b)
 {
     /* System generated locals */
     int ret_val;
@@ -481,8 +467,7 @@ int b;
 /* RMDESC PRINTS A DESCRIPTION OF THE CURRENT ROOM. */
 /* IT IS ALSO THE PROCESSOR FOR VERBS 'LOOK' AND 'EXAMINE'. */
 
-int rmdesc_(full)
-int full;
+int rmdesc_(int full)
 {
     /* System generated locals */
     int ret_val, L__1;
@@ -593,8 +578,7 @@ L600:
 
 /* DECLARATIONS */
 
-int rappli_(ri)
-int ri;
+int rappli_(int ri)
 {
     /* Initialized data */
 
