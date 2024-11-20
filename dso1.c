@@ -7,9 +7,7 @@
 #include "funcs.h"
 #include "vars.h"
 
-void princr_(full, rm)
-int full;
-int rm;
+void princr_(int full, int rm)
 {
     /* System generated locals */
     int i__1, i__2;
@@ -96,8 +94,7 @@ L1000:
 
 /* DECLARATIONS */
 
-void invent_(adv)
-int adv;
+void invent_(int adv)
 {
     /* System generated locals */
     int i__1;
@@ -158,9 +155,7 @@ L100:
 
 /* DECLARATIONS */
 
-void princo_(obj, desc)
-int obj;
-int desc;
+void princo_(int obj, int desc)
 {
     /* System generated locals */
     int i__1;

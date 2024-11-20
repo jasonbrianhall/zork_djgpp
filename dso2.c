@@ -8,9 +8,7 @@
 #include "funcs.h"
 #include "vars.h"
 
-int moveto_(nr, who)
-int nr;
-int who;
+int moveto_(int nr, int who)
 {
     /* System generated locals */
     int ret_val;
@@ -94,8 +92,7 @@ L800:
 
 /* DECLARATIONS */
 
-void score_(flg)
-int flg;
+void score_(int flg)
 {
     /* Initialized data */
 
@@ -162,8 +159,7 @@ L80:
 
 /* DECLARATIONS */
 
-void scrupd_(n)
-int n;
+int scrupd_int (int n)
 {
     if (findex_1.endgmf) {
 	goto L100;
