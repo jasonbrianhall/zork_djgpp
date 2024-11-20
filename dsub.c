@@ -22,8 +22,7 @@ static void rspsb2nl_ P((int, int, int, int));
 
 /* 	CALL RSPEAK(MSGNUM) */
 
-void rspeak_(n)
-int n;
+void rspeak_(int n)
 {
     rspsb2nl_(n, 0, 0, 1);
 } /* rspeak_ */
@@ -34,9 +33,7 @@ int n;
 
 /* 	CALL RSPSUB(MSGNUM,SUBNUM) */
 
-void rspsub_(n, s1)
-int n;
-int s1;
+void rspsub_(int n, int s1)
 {
     rspsb2nl_(n, s1, 0, 1);
 } /* rspsub_ */
@@ -47,21 +44,14 @@ int s1;
 
 /* 	CALL RSPSB2(MSGNUM,SUBNUM1,SUBNUM2) */
 
-void rspsb2_(n, s1, s2)
-int n;
-int s1;
-int s2;
+void rspsb2_(int n, int s1, int s2)
 {
     rspsb2nl_(n, s1, s2, 1);
 } /* rspsb2_ */
 
 /* rspsb2nl_ Display a substitutable message with an optional newline */
 
-static void rspsb2nl_(n, y, z, nl)
-int n;
-int y;
-int z;
-int nl;
+static void rspsb2nl_(int n, int y, int z, int nl)
 {
     const char *zkey = "IanLanceTaylorJr";
     long x;

@@ -159,7 +159,7 @@ L80:
 
 /* DECLARATIONS */
 
-int scrupd_int (int n)
+void scrupd_int (int n)
 {
     if (findex_1.endgmf) {
 	goto L100;

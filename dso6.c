@@ -7,9 +7,7 @@
 #include "funcs.h"
 #include "vars.h"
 
-int ghere_(obj, rm)
-int obj;
-int rm;
+int ghere_(int obj, int rm)
 {
     /* System generated locals */
     int ret_val;
@@ -130,8 +128,7 @@ L11000:
 
 /* DECLARATIONS */
 
-int mrhere_(rm)
-int rm;
+int mrhere_(int rm)
 {
     /* System generated locals */
     int ret_val, i__1;

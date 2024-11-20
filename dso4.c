@@ -127,9 +127,7 @@ int winnin_(int vl, int hr)
 
 /* DECLARATIONS */
 
-int fights_(h, flg)
-int h;
-int flg;
+int fights_(int h, int flg)
 {
     /* Initialized data */
 
@@ -151,8 +149,7 @@ int flg;
 
 /* DECLARATIONS */
 
-int vilstr_(v)
-int v;
+int vilstr_(int v)
 {
     /* System generated locals */
     int ret_val, i__1, i__2, i__3;

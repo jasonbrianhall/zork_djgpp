@@ -10,8 +10,7 @@
 static void ewtell_ P((int, int));
 static void lookto_ P((int, int, int, int, int));
 
-int rappl2_(ri)
-int ri;
+int rappl2_(int ri)
 {
     /* Initialized data */
 
@@ -409,12 +408,7 @@ L60100:
 
 /* DECLARATIONS */
 
-static void lookto_(nrm, srm, nt, st, ht)
-int nrm;
-int srm;
-int nt;
-int st;
-int ht;
+static void lookto_(int nrm, int srm, int nt, int st, int ht)
 {
     /* System generated locals */
     int i__1;
@@ -492,9 +486,7 @@ L200:
 
 /* DECLARATIONS */
 
-static void ewtell_(rm, st)
-int rm;
-int st;
+static void ewtell_(int rm, int st)
 {
     /* System generated locals */
     int i__1;

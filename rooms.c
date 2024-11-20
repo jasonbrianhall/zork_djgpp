@@ -7,8 +7,7 @@
 #include "funcs.h"
 #include "vars.h"
 
-int rappl1_(ri)
-int ri;
+int rappl1_(int ri)
 {
     /* System generated locals */
     int i__1, i__2;
