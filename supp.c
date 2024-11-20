@@ -38,10 +38,7 @@ void exit_()
 
 /* Get time in hours, minutes and seconds */
 
-void itime_(hrptr, minptr, secptr)
-int *hrptr;
-int *minptr;
-int *secptr;
+void itime_(int *hrptr, int *minptr, int *secptr)
 {
 	time_t timebuf;
 	struct tm *tmptr;
@@ -55,8 +52,7 @@ int *secptr;
 }
 /* Random number generator */
 
-int rnd_(maxval)
-int maxval;
+int rnd_(int maxval)
 {
 	return rand() % maxval;
 }
@@ -150,8 +146,7 @@ void more_init()
  * probably don't).
  */
 
-void more_output(z)
-const char *z;
+void more_output(const char *z)
 {
 /* pager code remarked out to allow streamed input and output */
 /*

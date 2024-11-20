@@ -7,8 +7,7 @@
 #include "funcs.h"
 #include "vars.h"
 
-int vappli_(ri)
-int ri;
+int vappli_(int ri)
 {
     /* Initialized data */
 

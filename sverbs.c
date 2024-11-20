@@ -10,8 +10,7 @@
 #include "funcs.h"
 #include "vars.h"
 
-int sverbs_(ri)
-int ri;
+int sverbs_(int ri)
 {
     /* Initialized data */
 

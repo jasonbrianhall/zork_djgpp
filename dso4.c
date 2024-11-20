@@ -7,11 +7,7 @@
 #include "funcs.h"
 #include "vars.h"
 
-int robadv_(adv, nr, nc, na)
-int adv;
-int nr;
-int nc;
-int na;
+int robadv_(int adv, int nr, int nc, int na)
 {
     /* System generated locals */
     int ret_val, i__1;
@@ -40,12 +36,7 @@ L100:
 
 /* DECLARATIONS */
 
-int robrm_(rm, pr, nr, nc, na)
-int rm;
-int pr;
-int nr;
-int nc;
-int na;
+int robrm_(int rm, int pr, int nr, int nc, int na)
 {
     /* System generated locals */
     int ret_val, i__1, i__2;
@@ -91,9 +82,7 @@ L100:
 
 /* DECLARATIONS */
 
-int winnin_(vl, hr)
-int vl;
-int hr;
+int winnin_(int vl, int hr)
 {
     /* System generated locals */
     int ret_val;
