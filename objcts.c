@@ -7,9 +7,7 @@
 #include "funcs.h"
 #include "vars.h"
 
-int oappli_(ri, arg)
-int ri;
-int arg;
+int oappli_(int ri, int arg)
 {
     /* Initialized data */
 

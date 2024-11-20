@@ -270,12 +270,7 @@ L200:
 
 /* DECLARATIONS */
 
-static int syneql_(prep, obj, sprep, sfl1, sfl2)
-int prep;
-int obj;
-int sprep;
-int sfl1;
-int sfl2;
+static int syneql_(int prep, int obj, int sprep, int sfl1, int sfl2)
 {
     /* System generated locals */
     int ret_val;
@@ -298,9 +293,7 @@ L100:
 
 /* DECLARATIONS */
 
-static int takeit_(obj, sflag)
-int obj;
-int sflag;
+static int takeit_(int obj, int sflag)
 {
     /* System generated locals */
     int ret_val;
@@ -417,10 +410,7 @@ L4000:
 
 /* DECLARATIONS */
 
-static int gwim_(sflag, sfw1, sfw2)
-int sflag;
-int sfw1;
-int sfw2;
+static int gwim_(int sflag, int sfw1, int sfw2)
 {
     /* System generated locals */
     int ret_val;
