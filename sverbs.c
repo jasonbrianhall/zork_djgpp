@@ -207,7 +207,7 @@ L4100:
 
 L5000:
     more_output(NULL);
-    printf("V%1d.%1d%c\n", vers_1.vmaj, vers_1.vmin, vers_1.vedit);
+    more_output("V%1d.%1d%c\n", vers_1.vmaj, vers_1.vmin, vers_1.vedit);
     play_1.telflg = TRUE_;
     return ret_val;
 
@@ -531,17 +531,17 @@ L21000:
     j = k % 60;
 
     more_output(NULL);
-    printf("You have been playing Dungeon for ");
+    more_output("You have been playing Dungeon for ");
     if (i >= 1) {
-	printf("%d hour", i);
+	more_output("%d hour", i);
 	if (i >= 2)
-	    printf("s");
-	printf(" and ");
+	    more_output("s");
+	more_output(" and ");
     }
-    printf("%d minute", j);
+    more_output("%d minute", j);
     if (j != 1)
-	printf("s");
-    printf(".\n");
+	more_output("s");
+    more_output(".\n");
     play_1.telflg = TRUE_;
     return ret_val;
 
@@ -660,7 +660,7 @@ L25000:
 
     if (j != 0) {
 	more_output(NULL);
-	printf("You will be cured after %d moves.\n", i);
+	more_output("You will be cured after %d moves.\n", i);
     }
 
     i__1 = k + 478;
@@ -748,7 +748,7 @@ L26400:
 /* 						!TELL HIM. */
     play_1.telflg = TRUE_;
     more_output(NULL);
-    printf("A hollow voice replies:  \"%.6s %.6s\".\n", pp1, ch);
+    more_output("A hollow voice replies:  \"%.6s %.6s\".\n", pp1, ch);
 
     return ret_val;
 

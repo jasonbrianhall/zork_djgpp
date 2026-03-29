@@ -12,7 +12,7 @@
 
 #include "funcs.h"
 #include "vars.h"
-
+#include "dtextc.h"
 /* This is here to avoid depending on the existence of <stdlib.h> */
 
 extern void srand P((unsigned int));
@@ -325,13 +325,9 @@ L10000:
 
 /* NOW RESTORE FROM EXISTING INDEX FILE. */
 
-#ifdef __AMOS__
-    if ((dbfile = fdopen(ropen(LOCALTEXTFILE, 0), BINREAD)) == NULL)
-#else
-    dbfile = fopen(LOCALTEXTFILE, "rb");
+    dbfile = fmemopen((void*)dtextc_dat, dtextc_dat_len, "rb");
     if (dbfile == NULL)
     //if ((dbfile = fopen(LOCALTEXTFILE, "rb")) == NULL)
-#endif
 
 	goto L1950;
 
@@ -433,14 +429,14 @@ L10000:
 
 L1925:
     more_output(NULL);
-    printf("%s is version %1d.%1d%c.\n", LOCALTEXTFILE, i, j, k);
+    more_output("%s is version %1d.%1d%c.\n", LOCALTEXTFILE, i, j, k);
     more_output(NULL);
-    printf("I require version %1d.%1d%c.\n", vers_1.vmaj, vers_1.vmin,
+    more_output("I require version %1d.%1d%c.\n", vers_1.vmaj, vers_1.vmin,
 	   vers_1.vedit);
     goto L1975;
 L1950:
     more_output(NULL);
-    printf("I can't open %s.\n", LOCALTEXTFILE);
+    more_output("I can't open %s.\n", LOCALTEXTFILE);
 L1975:
     more_output("Suddenly a sinister, wraithlike figure appears before you,");
     more_output("seeming to float in the air.  In a low, sorrowful voice he says,");

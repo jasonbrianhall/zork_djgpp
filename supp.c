@@ -1,6 +1,8 @@
 /* supp.c -- support routines for dungeon */
 
 #include <stdio.h>
+#include <stdarg.h>
+
 
 #ifdef unix
 #include <sys/types.h>
@@ -32,7 +34,7 @@ extern struct tm *localtime ();
 
 void exit_()
 {
-    fprintf(stderr, "The game is over.\n");
+    more_output("The game is over.\n");
     exit(0);
 }
 
@@ -142,27 +144,24 @@ void more_init()
 /* The program wants to output a line to the terminal.  If z is not
  * NULL it is a simple string which is output here; otherwise it
  * needs some sort of formatting, and is output after this function
- * returns (if all computers had vprintf I would just it, but they
+ * returns (if all computers had vmore_output I would just it, but they
  * probably don't).
  */
 
-void more_output(const char *z)
+
+void more_output(const char *fmt, ...)
 {
-/* pager code remarked out to allow streamed input and output */
-/*
-     if (crows > 0  &&  coutput > crows - 2) {
-	printf("Press return to continue: ");
-	(void) fflush(stdout);
-	while (getchar() != '\n')
-	    ;
-	coutput = 0;
+    va_list ap;
+
+    if (fmt != NULL) {
+        va_start(ap, fmt);
+        vprintf(fmt, ap);
+        va_end(ap);
     }
-*/
-    if (z != NULL)
-	printf("%s\n", z);
 
     coutput++;
 }
+
 
 /* The terminal is waiting for input (clear the number of output lines) */
 

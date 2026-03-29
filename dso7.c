@@ -123,12 +123,12 @@ L100:
     }
 
     more_output(NULL);
-    printf("       |%c%c %c%c %c%c|\n", dgm[0], dgm[0], dgm[1], dgm[1],
+    more_output("       |%c%c %c%c %c%c|\n", dgm[0], dgm[0], dgm[1], dgm[1],
 					dgm[2], dgm[2]);
     more_output(NULL);
-    printf(" West  |%c%c .. %c%c| East\n", dgm[3], dgm[3], dgm[4], dgm[4]);
+    more_output(" West  |%c%c .. %c%c| East\n", dgm[3], dgm[3], dgm[4], dgm[4]);
     more_output(NULL);
-    printf("       |%c%c %c%c %c%c|\n", dgm[5], dgm[5], dgm[6], dgm[6],
+    more_output("       |%c%c %c%c %c%c|\n", dgm[5], dgm[5], dgm[6], dgm[6],
 					dgm[7], dgm[7]);
 
     if (st == 10) {

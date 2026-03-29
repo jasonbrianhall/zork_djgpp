@@ -71,7 +71,7 @@ static void rspsb2nl_(int n, int y, int z, int nl)
 
     x = ((- x) - 1) * 8;
     if (fseek(dbfile, x + (long)rmsg_1.mrloc, SEEK_SET) == EOF) {
-	fprintf(stderr, "Error seeking database loc %d\n", x);
+	more_output("Error seeking database loc %d\n", x);
 	exit_();
     }
 
@@ -83,7 +83,7 @@ static void rspsb2nl_(int n, int y, int z, int nl)
 
 	i = getc(dbfile);
 	if (i == EOF) {
-	    fprintf(stderr, "Error reading database loc %d\n", x);
+	    more_output("Error reading database loc %d\n", x);
 	    exit_();
 	}
 	i ^= zkey[x & 0xf] ^ (x & 0xff);
@@ -101,7 +101,7 @@ static void rspsb2nl_(int n, int y, int z, int nl)
 	    iloc = ftell(dbfile);
 	    rspsb2nl_(y, 0, 0, 0);
 	    if (fseek(dbfile, iloc, SEEK_SET) == EOF) {
-		fprintf(stderr, "Error seeking database loc %d\n", iloc);
+		more_output("Error seeking database loc %d\n", iloc);
 		exit_();
 	    }
 	    y = z;
@@ -162,7 +162,7 @@ void bug_(int a, int b)
     /* Local variables */
 
     more_output(NULL);
-    printf("PROGRAM ERROR %d, PARAMETER=%d\n", a, b);
+    more_output("PROGRAM ERROR %d, PARAMETER=%d\n", a, b);
 
     if (debug_1.dbgflg != 0) {
 	return;
