@@ -50,9 +50,9 @@ extern int
 	wizard P((void)); */
 
 extern void
-	more_init P((void)),
-	more_output P((const char *)),
-	more_input P((void));
+    more_init P((void)),
+    more_output P((const char *fmt, ...)),
+    more_input P((void));
 
 extern void
 	bug_ P((int, int)),
