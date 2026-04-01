@@ -325,7 +325,15 @@ L10000:
 
 /* NOW RESTORE FROM EXISTING INDEX FILE. */
 
+#if defined(WIN32) || defined(__DJGPP__)
+    dbfile = tmpfile();
+    if (dbfile != NULL) {
+        fwrite(dtextc_dat, 1, dtextc_dat_len, dbfile);
+        rewind(dbfile);
+    }
+#else
     dbfile = fmemopen((void*)dtextc_dat, dtextc_dat_len, "rb");
+#endif
     if (dbfile == NULL)
     //if ((dbfile = fopen(LOCALTEXTFILE, "rb")) == NULL)
 

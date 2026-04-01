@@ -28,7 +28,6 @@ extern int rand P((void));
  */
 
 extern time_t time P((time_t *));
-extern struct tm *localtime ();
 
 /* Terminate the game */
 
